@@ -1,7 +1,7 @@
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import { useRef, Suspense } from "react";
+import { useRef, Suspense, useState, useEffect } from "react";
 import dynamic from "next/dynamic";
 import { Play } from "lucide-react";
 import Image from "next/image";
@@ -36,8 +36,30 @@ const AboutPresentation = ({
   const bulbImageRef = useRef<HTMLImageElement>(null);
   const textContainerRef = useRef<HTMLDivElement>(null);
 
+  const [columnStyles, setColumnStyles] = useState({ paddingLeft: "32px" });
+
+  useEffect(() => {
+    const calculateColumnStyles = () => {
+      const totalMargin = 64;
+      const totalGap = 11 * 24;
+      const totalColWidth = window.innerWidth - totalMargin - totalGap;
+      const oneCol = totalColWidth / 12;
+
+      setColumnStyles({
+        paddingLeft: `${2 * (oneCol + 24) + 32}px`,
+      });
+    };
+
+    calculateColumnStyles();
+
+    window.addEventListener("resize", calculateColumnStyles);
+
+    return () => window.removeEventListener("resize", calculateColumnStyles);
+  }, []);
+
   useGSAP(() => {
     gsap.registerPlugin(ScrollTrigger);
+
     const timeline = gsap.timeline({
       scrollTrigger: {
         trigger: sectionRef.current,
@@ -49,30 +71,33 @@ const AboutPresentation = ({
         anticipatePin: 1,
       },
     });
-    timeline
-      .to(videoInnerContainerRef.current, {
-        ease: "none",
-        width: "100%",
-        height: window.innerHeight - 48,
-      })
-      .to(
-        videoOuterContainerRef.current,
-        {
+
+    if (typeof window !== "undefined") {
+      timeline
+        .to(videoInnerContainerRef.current, {
           ease: "none",
-          top: 24,
-          marginTop: 0,
-          paddingLeft: 32,
-          paddingRight: 32,
-        },
-        "<",
-      )
-      .to(bulbImageRef.current, { filter: "blur(20px)" }, "<")
-      .to(
-        textContainerRef.current,
-        { ease: "none", x: -64, y: 64, scale: 0.8, opacity: 0.25 },
-        "<",
-      );
-  });
+          width: "100%",
+          height: window.innerHeight - 48,
+        })
+        .to(
+          videoOuterContainerRef.current,
+          {
+            ease: "none",
+            top: 24,
+            marginTop: 0,
+            paddingLeft: 32,
+            paddingRight: 32,
+          },
+          "<",
+        )
+        .to(bulbImageRef.current, { filter: "blur(20px)" }, "<")
+        .to(
+          textContainerRef.current,
+          { ease: "none", x: -64, y: 64, scale: 0.8, opacity: 0.25 },
+          "<",
+        );
+    }
+  }, []);
 
   useGSAP(() => {
     const letters = document.querySelectorAll(".letter");
@@ -96,11 +121,6 @@ const AboutPresentation = ({
       );
     }
   });
-
-  const totalMargin = 64;
-  const totalGap = 11 * 24;
-  const totalColWidth = window.innerWidth - totalMargin - totalGap;
-  const oneCol = totalColWidth / 12;
 
   return (
     <section className="relative min-h-screen pb-16" ref={sectionRef}>
@@ -129,7 +149,6 @@ const AboutPresentation = ({
                     </span>
                   </span>
                 ))}
-                {/* Add a space after each word except the last one */}
                 {wordIndex < title.split(" ").length - 1 && <span>&nbsp;</span>}
               </span>
             ))}
@@ -139,9 +158,7 @@ const AboutPresentation = ({
         </div>
         <div
           className="absolute left-0 top-full mt-6 w-full"
-          style={{
-            paddingLeft: 2 * (oneCol + 24) + 32,
-          }}
+          style={columnStyles}
           ref={videoOuterContainerRef}
         >
           <div
