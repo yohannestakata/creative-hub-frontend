@@ -1,0 +1,178 @@
+import { useGSAP } from "@gsap/react";
+import { gsap } from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+import { useRef } from "react";
+import Image from "next/image";
+import { useWindowDimensions } from "@/hooks";
+
+interface MainOverlayProps {
+  ref: React.RefObject<HTMLDivElement | null>;
+  title: string;
+  highlightWord: string;
+}
+
+interface SecondaryOverlayProps {
+  ref: React.RefObject<HTMLDivElement | null>;
+  text: string;
+}
+
+interface BackgroundImageProps {
+  ref: React.RefObject<HTMLDivElement | null>;
+  imgUrl: string;
+}
+
+interface HeaderPresentationProps {
+  imgUrl: string;
+  copy: string;
+  title: string;
+  highlightWord: string;
+}
+
+// Constants
+const ANIMATION_CONFIG = {
+  SCRUB_SPEED: 1,
+  SCALE_AMOUNT: 1.2,
+  IMAGE_QUALITY: 90,
+};
+
+const BackgroundImage = ({ ref, imgUrl }: BackgroundImageProps) => (
+  <div className="absolute h-full w-full overflow-hidden" ref={ref}>
+    <Image
+      width={1920}
+      height={1080}
+      alt="creative hub hero"
+      src={imgUrl}
+      className="h-full w-full object-cover"
+      priority
+      quality={ANIMATION_CONFIG.IMAGE_QUALITY}
+    />
+  </div>
+);
+
+const MainOverlay = ({ ref, title, highlightWord }: MainOverlayProps) => (
+  <div
+    className="absolute flex h-full w-full flex-col items-center justify-center -space-y-4 text-center font-display text-4xl font-medium uppercase leading-none tracking-tighter opacity-100"
+    ref={ref}
+  >
+    {title.split(" ").map((word, index) =>
+      word === highlightWord ? (
+        <span className="text-primary transition-opacity" key={index}>
+          {word}
+        </span>
+      ) : (
+        <span
+          key={index}
+          className="text-outline opacity-60 transition-opacity"
+        >
+          {word}
+        </span>
+      ),
+    )}
+  </div>
+);
+
+const SecondaryOverlay = ({ ref, text }: SecondaryOverlayProps) => (
+  <div
+    className="pointer-events-none absolute col-span-6 grid h-full w-full grid-cols-12 items-center gap-4 px-8 text-xl leading-tight tracking-tight opacity-0"
+    ref={ref}
+  >
+    <span className="col-span-6 col-start-4 text-background">{text}</span>
+  </div>
+);
+
+const useHeaderAnimation = (
+  containerRef: React.RefObject<HTMLDivElement | null>,
+  overlay1Ref: React.RefObject<HTMLDivElement | null>,
+  overlay2Ref: React.RefObject<HTMLDivElement | null>,
+  imageRef: React.RefObject<HTMLDivElement | null>,
+  windowHeight: number,
+): void => {
+  useGSAP(() => {
+    if (
+      !containerRef?.current ||
+      !overlay1Ref?.current ||
+      !overlay2Ref?.current ||
+      !imageRef?.current
+    )
+      return;
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    const timeline = gsap.timeline({
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: "top top",
+        end: () => `+=${windowHeight}`,
+        pin: true,
+        scrub: ANIMATION_CONFIG.SCRUB_SPEED,
+      },
+    });
+
+    timeline
+      .to(overlay1Ref.current, {
+        ease: "none",
+        opacity: 0,
+        scale: ANIMATION_CONFIG.SCALE_AMOUNT,
+        filter: "blur(5px)",
+      })
+      .to(
+        overlay2Ref.current,
+        {
+          ease: "none",
+          opacity: 1,
+        },
+        "<",
+      )
+      .to(
+        imageRef.current,
+        {
+          scale: ANIMATION_CONFIG.SCALE_AMOUNT,
+        },
+        "<",
+      );
+
+    return () => {
+      timeline.kill();
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+    };
+  }, [windowHeight]);
+};
+
+const HeaderPresentation = ({
+  imgUrl,
+  copy,
+  title,
+  highlightWord,
+}: HeaderPresentationProps) => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const overlay1Ref = useRef<HTMLDivElement>(null);
+  const overlay2Ref = useRef<HTMLDivElement>(null);
+  const imageRef = useRef<HTMLDivElement>(null);
+
+  const { windowHeight } = useWindowDimensions();
+
+  useHeaderAnimation(
+    containerRef,
+    overlay1Ref,
+    overlay2Ref,
+    imageRef,
+    windowHeight,
+  );
+
+  return (
+    <header
+      className="relative h-screen w-full overflow-hidden bg-foreground"
+      ref={containerRef}
+    >
+      <BackgroundImage ref={imageRef} imgUrl={imgUrl} />
+      <MainOverlay
+        ref={overlay1Ref}
+        title={title}
+        highlightWord={highlightWord}
+      />
+      <SecondaryOverlay ref={overlay2Ref} text={copy} />
+    </header>
+  );
+};
+
+export default HeaderPresentation;
