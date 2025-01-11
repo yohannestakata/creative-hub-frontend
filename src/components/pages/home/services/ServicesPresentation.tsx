@@ -1,22 +1,21 @@
-import SectionTitle from "@/components/ui/SectionTitle";
+import { SectionTitle } from "@/components/ui/";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { useRef } from "react";
 
-interface Events {
+interface Services {
   id: string;
   title: string;
   copy: string;
   imageUrl: string;
-  dateTime: string;
 }
 
-interface EventsPresentationProps {
-  services: Events[];
+interface ServicesPresentationProps {
+  services: Services[];
 }
 
-const EventsPresentation = ({ services }: EventsPresentationProps) => {
+const ServicesPresentation = ({ services }: ServicesPresentationProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const cardsRef = useRef<HTMLDivElement>(null);
 
@@ -52,8 +51,8 @@ const EventsPresentation = ({ services }: EventsPresentationProps) => {
   return (
     <section className="py-16">
       <SectionTitle
-        sectionName="Upcoming Events"
-        sectionTitle="Shaping the Future"
+        sectionName="Our Services"
+        sectionTitle="Your Working Day at the Hub"
       />
 
       {/* Services */}
@@ -75,19 +74,11 @@ const EventsPresentation = ({ services }: EventsPresentationProps) => {
                     backgroundImage: `linear-gradient(rgba(39, 21, 3, 0.40), rgba(39, 21, 3, 0.40)), url('${service.imageUrl}')`,
                   }}
                 >
-                  <div className="flex w-1/2 flex-col text-background">
-                    <span className="inline-block w-fit rounded bg-background p-2 text-sm font-semibold leading-none text-foreground">
-                      {new Intl.DateTimeFormat("en-US", {
-                        dateStyle: "medium",
-                        timeStyle: "short",
-                      }).format(new Date(service.dateTime))}
-                    </span>
-                    <span className="text-display mt-4 text-xl font-medium leading-none">
+                  <div className="flex w-1/2 flex-col gap-3 text-background">
+                    <span className="text-display text-xl font-medium leading-none">
                       {service.title}
                     </span>
-                    <span className="-mb-1 mt-3 opacity-60">
-                      {service.copy}
-                    </span>
+                    <span className="opacity-60">{service.copy}</span>
                   </div>
                 </div>
               ))}
@@ -99,4 +90,4 @@ const EventsPresentation = ({ services }: EventsPresentationProps) => {
   );
 };
 
-export default EventsPresentation;
+export default ServicesPresentation;

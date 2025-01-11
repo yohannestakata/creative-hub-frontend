@@ -5,7 +5,7 @@ import { useRef, Suspense, useState, useEffect } from "react";
 import dynamic from "next/dynamic";
 import { Play } from "lucide-react";
 import Image from "next/image";
-import backgroundImage from "../../../../public/icon-background.png";
+import backgroundImage from "../../../../../public/icon-background.png";
 
 const ReactPlayer = dynamic(() => import("react-player"), { ssr: false });
 

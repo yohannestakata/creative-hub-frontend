@@ -7,8 +7,10 @@ import {
   HeaderContainer,
   ServicesContainer,
   TestimonialsContainer,
-} from "@/components/home";
-import Footer from "@/components/ui/Footer";
+  TeamContainer,
+  PartnersContainer,
+} from "@/components/pages/home";
+import { Footer } from "@/components/layout";
 
 const Home = () => {
   return (
@@ -20,6 +22,8 @@ const Home = () => {
         <TestimonialsContainer />
         <GalleryContainer />
         <EventsContainer />
+        <TeamContainer />
+        <PartnersContainer />
       </main>
       <Footer />
     </div>

@@ -4,3 +4,5 @@ export * from "./gallery";
 export * from "./header";
 export * from "./services";
 export * from "./testimonials";
+export * from "./team";
+export * from "./partners";
