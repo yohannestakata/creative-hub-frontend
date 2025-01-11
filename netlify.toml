@@ -1,0 +1,3 @@
+[build.environment]
+NPM_FLAGS = "--use-npm"
+BUN_VERSION = "1.1.43"
