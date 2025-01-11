@@ -57,11 +57,13 @@ const TeamPresentation = ({ team }: TeamPresentationProps) => {
         .fromTo(
           card,
           {
+            filter: "contrast(0.5)",
             rotate: 12,
             scale: 0.5,
             ease: "power1.out",
           },
           {
+            filter: "contrast(1)",
             rotate: 0,
             scale: 1,
             ease: "power1.out",
@@ -71,6 +73,7 @@ const TeamPresentation = ({ team }: TeamPresentationProps) => {
         .to(
           card,
           {
+            filter: "contrast(0.5)",
             rotate: -12,
             scale: 0.5,
             ease: "power1.in",
@@ -104,7 +107,7 @@ const TeamPresentation = ({ team }: TeamPresentationProps) => {
             {team.map((person) => (
               <li
                 key={person.id}
-                className="card w-[calc(100vw-4rem)] flex-shrink-0 rotate-12 scale-50 sm:w-[calc((100vw-4rem-32px)/3)]"
+                className="card w-[calc(100vw-4rem)] flex-shrink-0 rotate-12 scale-50 contrast-50 sm:w-[calc((100vw-4rem-32px)/3)]"
               >
                 <div className="aspect-square overflow-hidden rounded-xl">
                   <Image
