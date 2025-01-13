@@ -6,7 +6,7 @@ import Image from "next/image";
 
 const PartnersPresentation = () => {
   return (
-    <section className="p-16">
+    <section className="px-8 py-16">
       <div className="grid grid-cols-12 items-center gap-6 border-b border-t py-12">
         <h2 className="col-span-full text-center font-display text-xl font-medium uppercase leading-none tracking-tighter">
           Empowering creativity through global partnerships

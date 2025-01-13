@@ -19,7 +19,9 @@ const GalleryPresentation = ({ images }: GalleryPresentationProps) => {
         sectionTitle="Celebrating Notable Guests"
       />
 
-      <Gallery images={images} />
+      <div className="mt-10">
+        <Gallery images={images} />
+      </div>
     </section>
   );
 };

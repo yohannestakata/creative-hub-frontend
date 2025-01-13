@@ -60,7 +60,7 @@ const Gallery = ({ images }: GalleryProps) => {
 
   return (
     <div
-      className="mt-10 grid h-screen grid-cols-12 gap-4 overflow-hidden px-8 will-change-transform"
+      className="grid h-screen grid-cols-12 gap-4 overflow-hidden px-8 will-change-transform"
       ref={containerRef}
     >
       {[col1Ref, col2Ref, col3Ref].map((colRef, colIndex) => (
