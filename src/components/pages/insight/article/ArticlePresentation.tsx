@@ -24,10 +24,10 @@ const ArticlePresentation = ({ post }: ArticlePresentationProps) => {
             width={1920}
             height={1080}
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-black/20" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/80 to-black/60" />
         </div>
 
-        <h1 className="z-10 col-span-8 col-start-3 font-display text-2xl leading-none tracking-tighter text-white">
+        <h1 className="z-10 col-span-8 col-start-3 font-display text-2xl font-medium leading-none tracking-tighter text-white">
           {post.title}
         </h1>
         <div className="z-10 col-span-8 col-start-3 flex items-center gap-3">
