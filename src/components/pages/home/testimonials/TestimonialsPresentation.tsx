@@ -61,7 +61,7 @@ const TestimonialsPresentation = ({
               className="h-full min-w-0 flex-[0_0_100%] translate-x-0 transform pl-4"
               key={testimonial.id}
             >
-              <p className="font-display text-2xl font-medium leading-none">
+              <p className="font-display text-2xl font-medium leading-none tracking-tighter">
                 {testimonial.testimonial}
               </p>
               <div className="mt-6 flex w-3/4 items-end gap-4">
@@ -75,10 +75,10 @@ const TestimonialsPresentation = ({
                   />
                 </div>
                 <div className="flex w-1/2 flex-col gap-2">
-                  <span className="text-lg font-semibold">
+                  <span className="text-lg font-semibold leading-none tracking-tight">
                     {testimonial.profileName}
                   </span>
-                  <span className="leading-snug text-muted-foreground">
+                  <span className="leading-none tracking-tight text-muted-foreground">
                     {testimonial.profilePosition}
                   </span>
                 </div>
@@ -92,12 +92,12 @@ const TestimonialsPresentation = ({
           <PrevButton
             onClick={() => onButtonClick(onPrevButtonClick)}
             disabled={prevBtnDisabled}
-            className="flex h-12 w-12 cursor-pointer items-center justify-center rounded-full hover:bg-muted disabled:text-gray-400"
+            className="flex h-12 w-12 cursor-pointer items-center justify-center rounded-full border-2 border-foreground hover:bg-muted disabled:text-gray-400"
           />
           <NextButton
             onClick={() => onButtonClick(onNextButtonClick)}
             disabled={nextBtnDisabled}
-            className="flex h-12 w-12 cursor-pointer items-center justify-center rounded-full hover:bg-muted disabled:text-gray-400"
+            className="flex h-12 w-12 cursor-pointer items-center justify-center rounded-full border-2 border-foreground hover:bg-muted disabled:text-gray-400"
           />
         </div>
       </div>

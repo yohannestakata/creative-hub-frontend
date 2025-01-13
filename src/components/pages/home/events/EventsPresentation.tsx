@@ -52,7 +52,7 @@ const EventsPresentation = ({ services }: EventsPresentationProps) => {
   });
 
   return (
-    <section className="py-16">
+    <section className="pb-16 pt-20">
       <SectionTitle
         sectionName="Upcoming Events"
         sectionTitle="Shaping the Future"

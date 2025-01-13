@@ -9,6 +9,7 @@ import {
   PartnersContainer,
 } from "@/components/pages/home";
 import { Footer } from "@/components/layout";
+import { BlogsContainer } from "@/components/pages/home/blogs";
 
 const Home = () => {
   return (
@@ -16,13 +17,15 @@ const Home = () => {
       <HeaderContainer />
       <main>
         <AboutContainer />
-        <ServicesContainer />
-        <TestimonialsContainer />
-        <GalleryContainer />
         <EventsContainer />
-        <TeamContainer />
+        <GalleryContainer />
+        <TestimonialsContainer />
         <PartnersContainer />
+        <ServicesContainer />
+        <TeamContainer />
+        <BlogsContainer />
       </main>
+
       <Footer />
     </div>
   );
