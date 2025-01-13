@@ -92,12 +92,12 @@ const TestimonialsPresentation = ({
           <PrevButton
             onClick={() => onButtonClick(onPrevButtonClick)}
             disabled={prevBtnDisabled}
-            className="flex h-12 w-12 cursor-pointer items-center justify-center rounded-full border-2 border-foreground hover:bg-muted disabled:text-gray-400"
+            className="flex h-12 w-12 cursor-pointer items-center justify-center rounded-full border-2 border-foreground transition-colors duration-200 hover:bg-muted disabled:text-gray-400"
           />
           <NextButton
             onClick={() => onButtonClick(onNextButtonClick)}
             disabled={nextBtnDisabled}
-            className="flex h-12 w-12 cursor-pointer items-center justify-center rounded-full border-2 border-foreground hover:bg-muted disabled:text-gray-400"
+            className="flex h-12 w-12 cursor-pointer items-center justify-center rounded-full border-2 border-foreground transition-colors duration-200 hover:bg-muted disabled:text-gray-400"
           />
         </div>
       </div>
