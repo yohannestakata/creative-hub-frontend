@@ -14,7 +14,7 @@ interface RelatedPresentationProps {
 
 const RelatedPresentation = ({ blogs }: RelatedPresentationProps) => {
   return (
-    <section className="py-16">
+    <section className="md:py-16">
       <SectionTitle
         sectionName="Related"
         sectionTitle="Stay Informed, Stay Inspired"
