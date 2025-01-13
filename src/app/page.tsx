@@ -7,9 +7,9 @@ import {
   TestimonialsContainer,
   TeamContainer,
   PartnersContainer,
+  InsightsContainer,
 } from "@/components/pages/home";
 import { Footer } from "@/components/layout";
-import { BlogsContainer } from "@/components/pages/home/blogs";
 
 const Home = () => {
   return (
@@ -23,7 +23,7 @@ const Home = () => {
         <PartnersContainer />
         <ServicesContainer />
         <TeamContainer />
-        <BlogsContainer />
+        <InsightsContainer />
       </main>
 
       <Footer />

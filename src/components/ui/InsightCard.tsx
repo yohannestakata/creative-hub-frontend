@@ -15,7 +15,7 @@ interface InsightCardProps {
 
 const InsightCard = ({ blog }: InsightCardProps) => {
   return (
-    <Link href={`/blog/${blog.id}`} className="col-span-4">
+    <Link href={`/insights/${blog.id}`} className="col-span-4">
       <div className="aspect-square overflow-hidden rounded-2xl">
         <Image
           src={blog.imageUrl}
@@ -32,7 +32,7 @@ const InsightCard = ({ blog }: InsightCardProps) => {
             timeStyle: "short",
           }).format(new Date(blog.dateTime))}
         </span>
-        <span className="mt-2 line-clamp-2 text-lg font-semibold leading-none">
+        <span className="mt-2 line-clamp-2 text-lg font-semibold leading-[120%]">
           {blog.title}
         </span>
         <span className="mt-2 line-clamp-2 text-muted-foreground">

@@ -12,7 +12,7 @@ interface BlogPresentationProps {
   blogs: Blog[];
 }
 
-const BlogsPresentation = ({ blogs }: BlogPresentationProps) => {
+const InsightsPresentation = ({ blogs }: BlogPresentationProps) => {
   return (
     <section className="py-16">
       <SectionTitle
@@ -28,4 +28,4 @@ const BlogsPresentation = ({ blogs }: BlogPresentationProps) => {
   );
 };
 
-export default BlogsPresentation;
+export default InsightsPresentation;

@@ -1,4 +1,4 @@
-import { BlogsPresentation } from ".";
+import { InsightsPresentation } from "./";
 
 const sampleBlogs = [
   {
@@ -57,8 +57,8 @@ const sampleBlogs = [
   },
 ];
 
-const BlogsContainer = () => {
-  return <BlogsPresentation blogs={sampleBlogs} />;
+const InsightsContainer = () => {
+  return <InsightsPresentation blogs={sampleBlogs} />;
 };
 
-export default BlogsContainer;
+export default InsightsContainer;
