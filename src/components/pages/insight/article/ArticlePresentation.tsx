@@ -14,7 +14,7 @@ interface ArticlePresentationProps {
 const ArticlePresentation = ({ post }: ArticlePresentationProps) => {
   return (
     <>
-      <header className="relative grid min-h-[50vh] grid-cols-12 items-center gap-4 px-8 py-12">
+      <header className="relative grid min-h-[50vh] grid-cols-12 items-center gap-4 px-8 py-16">
         <div className="absolute inset-0">
           <Image
             src={post.headerImage}
