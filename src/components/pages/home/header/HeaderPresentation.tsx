@@ -1,9 +1,10 @@
+"use client";
+
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { useRef } from "react";
 import Image from "next/image";
-import { useWindowDimensions } from "@/hooks";
 
 interface MainOverlayProps {
   ref: React.RefObject<HTMLDivElement | null>;
@@ -85,7 +86,6 @@ const useHeaderAnimation = (
   overlay1Ref: React.RefObject<HTMLDivElement | null>,
   overlay2Ref: React.RefObject<HTMLDivElement | null>,
   imageRef: React.RefObject<HTMLDivElement | null>,
-  windowHeight: number,
 ): void => {
   useGSAP(() => {
     if (
@@ -102,7 +102,7 @@ const useHeaderAnimation = (
       scrollTrigger: {
         trigger: containerRef.current,
         start: "top top",
-        end: () => `+=${windowHeight}`,
+        end: "+=100%",
         pin: true,
         scrub: ANIMATION_CONFIG.SCRUB_SPEED,
       },
@@ -135,7 +135,7 @@ const useHeaderAnimation = (
       timeline.kill();
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
-  }, [windowHeight]);
+  });
 };
 
 const HeaderPresentation = ({
@@ -149,15 +149,7 @@ const HeaderPresentation = ({
   const overlay2Ref = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLDivElement>(null);
 
-  const { windowHeight } = useWindowDimensions();
-
-  useHeaderAnimation(
-    containerRef,
-    overlay1Ref,
-    overlay2Ref,
-    imageRef,
-    windowHeight,
-  );
+  useHeaderAnimation(containerRef, overlay1Ref, overlay2Ref, imageRef);
 
   return (
     <header

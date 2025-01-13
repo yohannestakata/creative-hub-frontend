@@ -1,3 +1,5 @@
+"use client";
+
 import { SectionTitle } from "@/components/ui";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
