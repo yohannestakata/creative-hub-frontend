@@ -101,7 +101,7 @@ const RichText: React.FC<RichTextProps> = ({ content }) => {
         return (
           <h1
             key={index}
-            className="mb-6 mt-12 font-display text-2xl font-bold tracking-tight text-gray-900"
+            className="mb-6 mt-12 font-display text-xl lg:text-2xl font-bold tracking-tight text-gray-900"
           >
             {node.children?.map((child, i) =>
               renderNode(child, `${index}-${i}`),
