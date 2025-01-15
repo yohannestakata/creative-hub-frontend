@@ -13,7 +13,7 @@ interface GalleryPresentationProps {
 
 const GalleryPresentation = ({ images }: GalleryPresentationProps) => {
   return (
-    <section className="py-16">
+    <section className="py-8 md:py-16">
       <SectionTitle
         sectionName="Gallery"
         sectionTitle="Celebrating Notable Guests"

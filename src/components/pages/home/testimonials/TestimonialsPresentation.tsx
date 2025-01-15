@@ -61,10 +61,10 @@ const TestimonialsPresentation = ({
               className="h-full min-w-0 flex-[0_0_100%] translate-x-0 transform pl-4"
               key={testimonial.id}
             >
-              <p className="font-display text-2xl font-medium leading-none tracking-tighter">
+              <p className="font-display text-xl font-medium leading-none tracking-tighter md:text-2xl">
                 {testimonial.testimonial}
               </p>
-              <div className="mt-6 flex w-3/4 items-end gap-4">
+              <div className="mt-6 flex items-end gap-4 md:w-3/4">
                 <div className="aspect-square w-32 overflow-hidden rounded-2xl">
                   <Image
                     src={testimonial.profileAvatarUrl}
@@ -87,7 +87,7 @@ const TestimonialsPresentation = ({
           ))}
         </div>
       </div>
-      <div className="absolute bottom-0 flex w-full justify-end px-8 py-16">
+      <div className="absolute bottom-0 hidden w-full justify-end px-8 py-16 md:flex">
         <div className="grid grid-cols-2 items-center gap-4">
           <PrevButton
             onClick={() => onButtonClick(onPrevButtonClick)}

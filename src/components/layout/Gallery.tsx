@@ -60,13 +60,17 @@ const Gallery = ({ images }: GalleryProps) => {
 
   return (
     <div
-      className="grid h-screen grid-cols-12 gap-4 overflow-hidden px-8 will-change-transform"
+      className="grid h-screen grid-cols-12 gap-2 overflow-hidden px-4 will-change-transform md:gap-4 md:px-8"
       ref={containerRef}
     >
       {[col1Ref, col2Ref, col3Ref].map((colRef, colIndex) => (
         <div
           key={colIndex}
-          className="col-span-4 flex h-fit flex-col gap-4 will-change-transform"
+          className={twJoin(
+            "col-span-full flex h-fit flex-col gap-4 will-change-transform md:col-span-4",
+            colIndex === 2 ? "hidden md:flex" : "",
+            colIndex === 1 ? "hidden md:flex" : "",
+          )}
           ref={colRef}
         >
           {images[colIndex]?.slice(0, 5).map((image, index) => (
