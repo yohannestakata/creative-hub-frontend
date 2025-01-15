@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import Image from "next/image";
 import { SectionTitle } from "@/components/ui";
 import { twMerge } from "tailwind-merge";
@@ -39,28 +39,31 @@ const EventCalendarPresentation: React.FC<EventCalendarPresentationProps> = ({
     "November",
     "December",
   ];
-
-  const filteredEvents = events
-    .filter((event): event is Event => {
-      return Boolean(
-        event &&
-          event.id &&
-          event.title &&
-          event.dateTime &&
-          event.imageUrl &&
-          !isNaN(new Date(event.dateTime).getTime()),
-      );
-    })
-    .filter((event) => {
-      const eventDate = new Date(event.dateTime);
-      return eventDate.getMonth() === selectedMonth;
-    });
+  const filteredEvents = useMemo(
+    () =>
+      events
+        .filter((event): event is Event => {
+          return Boolean(
+            event &&
+              event.id &&
+              event.title &&
+              event.dateTime &&
+              event.imageUrl &&
+              !isNaN(new Date(event.dateTime).getTime()),
+          );
+        })
+        .filter((event) => {
+          const eventDate = new Date(event.dateTime);
+          return eventDate.getMonth() === selectedMonth;
+        }),
+    [events, selectedMonth],
+  );
 
   useEffect(() => {
-    if (filteredEvents.length > 0) {
+    if (filteredEvents.length > 0 && !selectedEvent) {
       setSelectedEvent(filteredEvents[0]);
     }
-  }, [filteredEvents]);
+  }, [filteredEvents, selectedEvent]);
 
   return (
     <div className="py-12">
