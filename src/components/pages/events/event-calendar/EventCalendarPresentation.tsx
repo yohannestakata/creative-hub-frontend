@@ -39,6 +39,7 @@ const EventCalendarPresentation: React.FC<EventCalendarPresentationProps> = ({
     "November",
     "December",
   ];
+
   const filteredEvents = useMemo(
     () =>
       events
@@ -60,10 +61,12 @@ const EventCalendarPresentation: React.FC<EventCalendarPresentationProps> = ({
   );
 
   useEffect(() => {
-    if (filteredEvents.length > 0 && !selectedEvent) {
+    if (filteredEvents.length > 0) {
       setSelectedEvent(filteredEvents[0]);
+    } else {
+      setSelectedEvent(null);
     }
-  }, [filteredEvents, selectedEvent]);
+  }, [filteredEvents, selectedMonth]);
 
   return (
     <div className="py-12">
