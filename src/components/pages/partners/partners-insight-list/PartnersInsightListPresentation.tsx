@@ -21,7 +21,7 @@ const PartnersInsightListPresentation = ({
         sectionName="Insights"
         sectionTitle="Events With Out Partners"
       />
-      <div className="mt-10 grid grid-cols-12 gap-4 px-16">
+      <div className="mt-10 grid grid-cols-12 gap-4 px-8">
         {blogs.map((blog) => (
           <InsightCard blog={blog} key={blog.id} />
         ))}
