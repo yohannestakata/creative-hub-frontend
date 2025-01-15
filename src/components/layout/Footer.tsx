@@ -12,9 +12,9 @@ import Link from "next/link";
 const Footer = () => {
   return (
     <footer className="">
-      <div className="flex gap-4 px-8 py-16">
+      <div className="flex flex-col gap-12 px-4 py-16 md:flex-row md:gap-4 md:px-8">
         <div className="flex-1">
-          <span className="font-display text-2xl font-medium uppercase leading-none tracking-tighter">
+          <span className="font-display text-xl font-medium uppercase leading-none tracking-tighter lg:text-2xl">
             Join the Creative Community
           </span>
           <p className="mt-4 text-muted-foreground">
@@ -27,7 +27,7 @@ const Footer = () => {
           </button>
         </div>
         <div className="grid flex-1 grid-cols-6 gap-4">
-          <div className="col-span-3">
+          <div className="col-span-4 md:col-span-3">
             <span className="font-semibold uppercase">Contact</span>
             <ul className="mt-3 space-y-2">
               <li>
@@ -64,8 +64,8 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          <div className="col-span-1">
-            <ul className="flex flex-col gap-4">
+          <div className="col-span-full md:col-span-1">
+            <ul className="flex gap-4 md:flex-col">
               <li>
                 <Link href="/">
                   <FacebookIcon />
@@ -95,11 +95,11 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="border-t py-6">
-        <div className="text-center">
+      <div className="border-t px-4 py-6">
+        <div className="text-left lg:text-center">
           Copyright &copy; 2025 Creative Hub Ethiopia | All rights reserved
         </div>
-        <div className="text-center">
+        <div className="text-left lg:text-center">
           Designed and developed by{" "}
           <Link href="/" className="underline">
             Ras Tech
