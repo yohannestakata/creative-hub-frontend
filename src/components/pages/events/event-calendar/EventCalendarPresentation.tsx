@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { SectionTitle } from "@/components/ui";
 import { twMerge } from "tailwind-merge";
@@ -55,6 +55,12 @@ const EventCalendarPresentation: React.FC<EventCalendarPresentationProps> = ({
       const eventDate = new Date(event.dateTime);
       return eventDate.getMonth() === selectedMonth;
     });
+
+  useEffect(() => {
+    if (filteredEvents.length > 0) {
+      setSelectedEvent(filteredEvents[0]);
+    }
+  }, [filteredEvents]);
 
   return (
     <div className="py-12">
