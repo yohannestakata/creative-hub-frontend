@@ -71,9 +71,9 @@ const EventCalendarPresentation: React.FC<EventCalendarPresentationProps> = ({
         sectionName="Event Calendar"
         sectionTitle="Timeline of Great Happenings"
       />
-      <div className="mt-10 grid grid-cols-12 gap-4 px-8">
-        <div className="relative col-span-6 overflow-hidden">
-          <div className="absolute flex h-full w-full flex-col gap-2 overflow-hidden">
+      <div className="mt-10 grid grid-cols-1 gap-4 px-8 lg:grid-cols-12">
+        <div className="relative col-span-12 overflow-hidden lg:col-span-6">
+          <div className="flex h-full w-full flex-col gap-2 overflow-hidden lg:absolute">
             <form>
               <select
                 id="months"
@@ -142,9 +142,9 @@ const EventCalendarPresentation: React.FC<EventCalendarPresentationProps> = ({
           </div>
         </div>
 
-        <div className="col-span-6">
+        <div className="col-span-12 lg:col-span-6">
           {selectedEvent ? (
-            <div className="relative col-span-12 aspect-square overflow-hidden rounded-2xl">
+            <div className="relative col-span-12 aspect-[3/5] overflow-hidden rounded-2xl md:aspect-[5/3] lg:aspect-square">
               <Image
                 src={selectedEvent.imageUrl}
                 alt="Event background"
@@ -161,7 +161,7 @@ const EventCalendarPresentation: React.FC<EventCalendarPresentationProps> = ({
                       timeStyle: "short",
                     }).format(new Date(selectedEvent.dateTime))}
                   </div>
-                  <div className="font-display text-2xl font-medium leading-none tracking-tighter text-background">
+                  <div className="font-display text-xl font-medium leading-none tracking-tighter text-background lg:text-2xl">
                     {selectedEvent.title}
                   </div>
                   <div className="line-clamp-2 text-background opacity-60">
