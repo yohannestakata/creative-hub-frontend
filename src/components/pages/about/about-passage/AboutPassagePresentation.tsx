@@ -1,4 +1,4 @@
-import { Image } from "lucide-react";
+import Image from "next/image";
 
 const AboutPassagePresentation = () => {
   return (
@@ -7,7 +7,7 @@ const AboutPassagePresentation = () => {
         <Image
           width={500}
           height={500}
-          alt="e"
+          alt=""
           src="https://images.unsplash.com/photo-1736841096703-d042981a6157?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDR8cVBZc0R6dkpPWWN8fGVufDB8fHx8fA%3D%3D"
           className="h-full w-full object-cover"
         />
