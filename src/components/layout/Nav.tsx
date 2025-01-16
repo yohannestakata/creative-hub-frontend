@@ -12,7 +12,6 @@ import logo from "@/../public/Creative-Hub.svg";
 
 export default function Nav() {
   const toolbarRef = useRef<HTMLDivElement | null>(null);
-  const menuRef = useRef<HTMLUListElement | null>(null);
 
   gsap.registerPlugin(useGSAP, ScrollTrigger);
 
