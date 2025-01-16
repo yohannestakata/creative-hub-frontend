@@ -1,4 +1,4 @@
-import { Footer } from "@/components/layout";
+import { Footer, Nav } from "@/components/layout";
 import {
   AboutContainer,
   AboutHeaderContainer,
@@ -6,12 +6,13 @@ import {
   AboutPassageContainer,
   AboutServicesContainer,
   AboutStatsContainer,
-  AboutCollaboratorsContainer,
-} from "@/components/pages/about";
+  AboutCollaboratorsContainer
+} from "@/components/pages/about";;
 
 const About = () => {
   return (
     <>
+      <Nav />
       <AboutHeaderContainer />
       <AboutContainer />
       <AboutStatsContainer />

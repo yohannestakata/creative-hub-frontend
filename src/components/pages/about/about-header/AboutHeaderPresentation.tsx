@@ -12,7 +12,7 @@ const AboutHeaderPresentation = ({
   imageUrl,
 }: AboutHeaderPresentation) => {
   return (
-    <header className="px-8 py-16">
+    <header className="px-8 pb-16 pt-8">
       <div className="relative aspect-banner overflow-hidden rounded-2xl bg-black">
         <Image
           width={1920}

@@ -16,7 +16,7 @@ interface InsightsListPresentationProps {
 const InsightsListPresentation = ({ blogs }: InsightsListPresentationProps) => {
   return (
     <div className="px-8">
-      <div className="relative col-span-12 mt-6 aspect-banner overflow-hidden rounded-2xl">
+      <div className="relative col-span-12 mt-8 aspect-banner overflow-hidden rounded-2xl">
         <Image
           src={blogs[0].imageUrl}
           alt="Header background"
