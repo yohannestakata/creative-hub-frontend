@@ -1,6 +1,6 @@
 const AboutStatsPresentation = () => {
   return (
-    <section className="px-8 py-16">
+    <section className="md:px-8 px-4 py-16">
       <div className="grid w-full lg:grid-cols-5 md:grid-cols-3 grid-cols-2 gap-x-8 items-center justify-between gap-4 border-b border-t border-border py-16 leading-none md:flex-row">
         <div className="flex-1">
           <div className="font-display text-xl font-medium tracking-tighter md:text-2xl lg:text-3xl">

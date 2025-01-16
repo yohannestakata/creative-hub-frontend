@@ -19,7 +19,7 @@ const PartnersGalleryPresentation = ({ images }: PartnersGalleryProps) => {
         sectionName="Gallery"
         sectionTitle="Celebrating Notable Guests"
       />
-      <div className="mt-10 grid grid-cols-12 gap-4 px-8">
+      <div className="mt-10 grid grid-cols-12 md:gap-4 gap-3 md:px-8 px-4">
         {images.map((image, index) => {
           const isSquare = index % 4 === 0 || index % 4 === 3;
           return (

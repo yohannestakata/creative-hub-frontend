@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const PartnersArticlePresentation = () => {
   return (
-    <section className="grid grid-cols-12 gap-4 px-8 pb-12">
+    <section className="grid grid-cols-12 gap-4 md:px-8 px-4 pb-12">
       <div className="lg:col-span-6 col-span-12 lg:aspect-square md:aspect-[5/2] aspect-[4/3] overflow-hidden rounded-2xl bg-black">
         <Image
           width={500}

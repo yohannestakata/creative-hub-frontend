@@ -16,7 +16,7 @@ interface EventsListPresentationProps {
 const EventsListPresentation = ({ events }: EventsListPresentationProps) => {
   return (
     <>
-      <div className="px-8 pb-12 pt-8">
+      <div className="md:px-8 px-4 pb-12 pt-8">
         <header className="relative col-span-12 mt-6 aspect-[3/5] overflow-hidden rounded-2xl md:aspect-[5/3] lg:aspect-banner">
           <Image
             src={events[0].imageUrl}
@@ -50,7 +50,7 @@ const EventsListPresentation = ({ events }: EventsListPresentationProps) => {
           sectionTitle="Events You Don't Want to Miss"
           sectionName="Upcoming Events"
         />
-        <div className="mt-10 grid grid-cols-12 gap-4 gap-y-6 px-8">
+        <div className="mt-10 grid grid-cols-12 gap-4 gap-y-6 md:px-8 px-4">
           {events.slice(1).map((event) => (
             <InsightCard blog={event} key={event.id} clickable={false} />
           ))}

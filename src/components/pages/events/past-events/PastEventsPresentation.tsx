@@ -16,7 +16,7 @@ const PastEventsPresentation = ({ events }: PastEventsPresentationProps) => {
   return (
     <section className="py-12">
       <SectionTitle sectionName="Past Events" sectionTitle="Our Past Events" />
-      <div className="mt-10 grid grid-cols-12 gap-4 px-8">
+      <div className="mt-10 grid grid-cols-12 gap-4 md:px-8 px-4">
         {events.map((event) => (
           <InsightCard
             blog={event}

@@ -1,6 +1,6 @@
 const AboutPresentation = ({ paragraph }: { paragraph: string }) => {
   return (
-    <p className="px-8 py-16 font-display text-xl lg:text-2xl font-medium leading-none tracking-tighter">
+    <p className="md:px-8 px-4 py-16 font-display text-xl lg:text-2xl font-medium leading-none tracking-tighter">
       {paragraph}{" "}
     </p>
   );

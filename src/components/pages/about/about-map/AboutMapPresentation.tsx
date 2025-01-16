@@ -55,7 +55,7 @@ export default function AboutMapPresentation({
   };
 
   return (
-    <section className="md:px-8 py-12">
+    <section className="md:px-8 px-4 py-12">
       <div className="aspect-square w-full overflow-hidden rounded-2xl  md:aspect-banner">
         <MapContainer {...mapProps}>
           <TileLayer {...tileLayerProps} />

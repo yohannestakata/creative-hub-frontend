@@ -14,7 +14,7 @@ interface ArticlePresentationProps {
 const ArticlePresentation = ({ post }: ArticlePresentationProps) => {
   return (
     <>
-      <header className="relative grid grid-cols-12 items-center gap-4 px-4 py-16 lg:px-8">
+      <header className="relative grid grid-cols-12 items-center gap-4 px-4 py-16 md:px-8">
         <div className="absolute inset-0">
           <Image
             src={post.headerImage}
@@ -43,7 +43,7 @@ const ArticlePresentation = ({ post }: ArticlePresentationProps) => {
           <span className="text-background">{post.author}</span>
         </div>
       </header>
-      <main className="grid grid-cols-12 gap-4 px-4 py-8 lg:px-8 lg:py-12">
+      <main className="grid grid-cols-12 gap-4 px-4 py-8 md:px-8 md:py-12">
         <div className="col-span-12 md:col-span-10 md:col-start-2 lg:col-span-8 lg:col-start-3">
           <RichText content={post.content} />
         </div>

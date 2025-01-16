@@ -36,7 +36,7 @@ export default function Nav() {
   return (
     <nav
       ref={toolbarRef}
-      className={`main-tool-bar sticky top-0 z-50 col-span-12 flex h-fit w-full flex-col md:items-center justify-between gap-4 border-b border-border bg-background px-4 py-6 leading-none md:flex-row md:gap-0 md:px-8`}
+      className={`main-tool-bar sticky top-0 z-50 col-span-12 flex h-fit w-full items-center justify-between  border-b border-border bg-background px-4 py-6 leading-none md:px-8`}
     >
       <div className={`flex w-full flex-1 justify-between`}>
         <Link href="/">
@@ -52,8 +52,8 @@ export default function Nav() {
         </Link>
       </div>
 
-      <button className="flex rounded-full bg-primary px-4 py-2 text-[14px] leading-none md:px-6 md:py-3 md:text-base w-fit">
-        Join the community
+      <button className="flex rounded-full bg-primary px-4 py-2 text-[14px] leading-none md:px-6 md:py-3 md:text-base">
+        Join now
       </button>
     </nav>
   );

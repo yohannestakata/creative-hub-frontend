@@ -74,8 +74,8 @@ const EventCalendarPresentation: React.FC<EventCalendarPresentationProps> = ({
         sectionName="Event Calendar"
         sectionTitle="Timeline of Great Happenings"
       />
-      <div className="mt-10 grid grid-cols-1 gap-4 px-8 lg:grid-cols-12">
-        <div className="relative col-span-12 overflow-hidden lg:col-span-6">
+      <div className="mt-10 grid grid-cols-1 gap-4 md:px-8 px-4 lg:grid-cols-12">
+        <div className="relative col-span-12 overflow-hidden lg:col-span-6 lg:order-1 order-2">
           <div className="flex h-full w-full flex-col gap-2 overflow-hidden lg:absolute">
             <form>
               <select
@@ -145,7 +145,7 @@ const EventCalendarPresentation: React.FC<EventCalendarPresentationProps> = ({
           </div>
         </div>
 
-        <div className="col-span-12 lg:col-span-6">
+        <div className="col-span-12 lg:col-span-6 lg:order-2 order-1">
           {selectedEvent ? (
             <div className="relative col-span-12 aspect-[3/5] overflow-hidden rounded-2xl md:aspect-[5/3] lg:aspect-square">
               <Image
