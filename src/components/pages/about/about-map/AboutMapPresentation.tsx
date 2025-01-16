@@ -55,8 +55,8 @@ export default function AboutMapPresentation({
   };
 
   return (
-    <section className="px-8 py-12">
-      <div className="aspect-banner w-full overflow-hidden rounded-2xl">
+    <section className="md:px-8 py-12">
+      <div className="aspect-square w-full overflow-hidden rounded-2xl  md:aspect-banner">
         <MapContainer {...mapProps}>
           <TileLayer {...tileLayerProps} />
           {branches.map((branch) => (

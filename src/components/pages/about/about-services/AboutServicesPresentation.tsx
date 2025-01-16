@@ -69,7 +69,7 @@ const AboutServicesPresentation = ({ services }: AboutServicesPresentation) => {
           >
             <div
               ref={setImageRef}
-              className="relative col-span-6 aspect-square overflow-hidden rounded-2xl bg-black"
+              className="relative col-span-12 aspect-[4/3] overflow-hidden rounded-2xl bg-black md:aspect-[5/2] lg:col-span-6 lg:aspect-square"
             >
               <Image
                 src={service.imageUrl}
@@ -79,8 +79,8 @@ const AboutServicesPresentation = ({ services }: AboutServicesPresentation) => {
                 className="h-full w-full -translate-y-1/4 transform object-cover"
               />
             </div>
-            <div className="col-span-5 col-start-8">
-              <h2 className="font-display text-2xl font-medium leading-none tracking-tight">
+            <div className="col-span-12 lg:col-span-5 lg:col-start-8">
+              <h2 className="font-display text-xl font-medium leading-none tracking-tight lg:text-2xl">
                 {service.title}
               </h2>
               <p className="mt-4">{service.description}</p>

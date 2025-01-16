@@ -3,7 +3,7 @@ import Image from "next/image";
 const AboutPassagePresentation = () => {
   return (
     <section className="grid grid-cols-12 gap-4 px-8 py-16 pb-12">
-      <div className="col-span-6 aspect-square overflow-hidden rounded-2xl bg-black">
+      <div className="col-span-12 aspect-[4/3] overflow-hidden rounded-2xl bg-black md:aspect-[5/2] lg:col-span-6 lg:aspect-square">
         <Image
           width={500}
           height={500}
@@ -12,8 +12,8 @@ const AboutPassagePresentation = () => {
           className="h-full w-full object-cover"
         />
       </div>
-      <div className="col-span-6 flex flex-col gap-4">
-        <h2 className="font-display text-2xl font-medium leading-none tracking-tighter">
+      <div className="col-span-12 flex flex-col gap-4 lg:col-span-6">
+        <h2 className="font-display text-xl lg:text-2xl font-medium leading-none tracking-tighter">
           Celebrating Notable Guests
         </h2>
         <p>

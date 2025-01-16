@@ -36,7 +36,7 @@ export default function Nav() {
   return (
     <nav
       ref={toolbarRef}
-      className={`main-tool-bar sticky top-0 z-50 col-span-12 flex h-fit w-full items-center justify-between border-b border-border bg-background px-4 py-6 leading-none md:px-8`}
+      className={`main-tool-bar sticky top-0 z-50 col-span-12 flex h-fit w-full flex-col md:items-center justify-between gap-4 border-b border-border bg-background px-4 py-6 leading-none md:flex-row md:gap-0 md:px-8`}
     >
       <div className={`flex w-full flex-1 justify-between`}>
         <Link href="/">
@@ -46,13 +46,13 @@ export default function Nav() {
               alt="Ras Tech Logo"
               width={120}
               height={120}
-              className="block h-full w-full object-cover"
+              className="block h-full w-10/12 md:w-full md:object-cover"
             />
           </div>
         </Link>
       </div>
 
-      <button className="flex rounded-full bg-primary px-6 py-3 leading-none">
+      <button className="flex rounded-full bg-primary px-4 py-2 text-[14px] leading-none md:px-6 md:py-3 md:text-base w-fit">
         Join the community
       </button>
     </nav>
