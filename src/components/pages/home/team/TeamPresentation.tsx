@@ -87,9 +87,9 @@ const TeamPresentation = ({ team }: TeamPresentationProps) => {
   });
 
   return (
-    <section className="py-16">
+    <section className="py-8 md:py-16">
       <div className="grid grid-cols-12 gap-4">
-        <h2 className="col-span-6 col-start-4 text-center font-display text-2xl font-medium uppercase leading-none">
+        <h2 className="col-span-full text-center font-display text-xl font-medium uppercase leading-none md:col-span-6 md:col-start-4 md:text-2xl">
           The Team Behind Creative Hub
         </h2>
       </div>
@@ -105,7 +105,7 @@ const TeamPresentation = ({ team }: TeamPresentationProps) => {
               width: "fit-content",
             }}
           >
-            <div className="card w-[calc(100vw-4rem)] flex-shrink-0 rotate-12 scale-50 opacity-0 sm:w-[calc((100vw-4rem-32px)/3)]" />
+            <div className="card hidden w-[calc(100vw-4rem)] flex-shrink-0 rotate-12 scale-50 opacity-0 sm:w-[calc((100vw-4rem-32px)/3)] md:block" />
             {team.map((person) => (
               <li
                 key={person.id}
@@ -128,7 +128,7 @@ const TeamPresentation = ({ team }: TeamPresentationProps) => {
                 </div>
               </li>
             ))}
-            <div className="card w-[calc(100vw-4rem)] flex-shrink-0 rotate-12 scale-50 opacity-0 sm:w-[calc((100vw-4rem-32px)/3)]" />
+            <div className="card hidden w-[calc(100vw-4rem)] flex-shrink-0 rotate-12 scale-50 opacity-0 sm:w-[calc((100vw-4rem-32px)/3)] md:block" />
           </ul>
         </div>
       </section>

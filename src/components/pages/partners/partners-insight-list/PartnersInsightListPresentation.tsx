@@ -8,18 +8,20 @@ type Blog = {
   imageUrl: string;
 };
 
-interface BlogPresentationProps {
+interface PartnersInsightPresentationProps {
   blogs: Blog[];
 }
 
-const InsightsPresentation = ({ blogs }: BlogPresentationProps) => {
+const PartnersInsightListPresentation = ({
+  blogs,
+}: PartnersInsightPresentationProps) => {
   return (
-    <section className="py-8 md:py-16">
+    <section className="py-12">
       <SectionTitle
         sectionName="Insights"
-        sectionTitle="Stay Informed, Stay Inspired"
+        sectionTitle="Events With Out Partners"
       />
-      <div className="mt-10 grid grid-cols-12 gap-x-4 gap-y-6 px-4 md:px-8">
+      <div className="mt-10 grid grid-cols-12 gap-4 px-8">
         {blogs.map((blog) => (
           <InsightCard blog={blog} key={blog.id} />
         ))}
@@ -28,4 +30,4 @@ const InsightsPresentation = ({ blogs }: BlogPresentationProps) => {
   );
 };
 
-export default InsightsPresentation;
+export default PartnersInsightListPresentation;

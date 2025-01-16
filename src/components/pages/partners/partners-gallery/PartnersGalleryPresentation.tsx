@@ -1,5 +1,5 @@
-import SectionTitle from "@/components/ui/SectionTitle";
 import { Gallery } from "@/components/layout";
+import { SectionTitle } from "@/components/ui";
 
 type Image = {
   id: string;
@@ -7,18 +7,17 @@ type Image = {
   alt: string;
 };
 
-interface GalleryPresentationProps {
+interface PartnersGalleryProps {
   images: Image[][];
 }
 
-const GalleryPresentation = ({ images }: GalleryPresentationProps) => {
+const PartnersGalleryPresentation = ({ images }: PartnersGalleryProps) => {
   return (
-    <section className="py-8 md:py-16">
+    <section className="py-12">
       <SectionTitle
         sectionName="Gallery"
         sectionTitle="Celebrating Notable Guests"
       />
-
       <div className="mt-10">
         <Gallery images={images} />
       </div>
@@ -26,4 +25,4 @@ const GalleryPresentation = ({ images }: GalleryPresentationProps) => {
   );
 };
 
-export default GalleryPresentation;
+export default PartnersGalleryPresentation;

@@ -64,7 +64,7 @@ const EventsPresentation = ({ services }: EventsPresentationProps) => {
           className="h-screen w-full overflow-hidden py-6"
           ref={containerRef}
         >
-          <div className="relative h-full w-full px-8">
+          <div className="relative h-full w-full px-4 md:px-8">
             <div
               ref={cardsRef}
               className="absolute inset-x-8 flex h-full gap-4"
@@ -72,12 +72,12 @@ const EventsPresentation = ({ services }: EventsPresentationProps) => {
               {services.map((service) => (
                 <div
                   key={service.id}
-                  className="flex h-full w-full flex-shrink-0 items-end rounded-2xl bg-foreground bg-cover bg-center p-12"
+                  className="flex h-full w-full flex-shrink-0 items-end rounded-2xl bg-foreground bg-cover bg-center p-6 md:p-12"
                   style={{
                     backgroundImage: `linear-gradient(rgba(39, 21, 3, 0.40), rgba(39, 21, 3, 0.40)), url('${service.imageUrl}')`,
                   }}
                 >
-                  <div className="flex w-1/2 flex-col text-background">
+                  <div className="flex flex-col text-background md:w-1/2">
                     <span className="inline-block w-fit rounded bg-background p-2 text-sm font-semibold leading-none text-foreground">
                       {new Intl.DateTimeFormat("en-US", {
                         dateStyle: "medium",
