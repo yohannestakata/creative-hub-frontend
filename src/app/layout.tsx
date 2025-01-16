@@ -1,14 +1,15 @@
-import type { Metadata } from "next";
+import { Metadata } from "next";
 import localFont from "next/font/local";
+import { Suspense } from "react";
 import "./globals.css";
 
 const supreme = localFont({
-  src: "/../../public/fonts/Supreme-Variable.ttf",
+  src: "../../public/fonts/Supreme-Variable.ttf",
   variable: "--font-display",
 });
 
 const poppins = localFont({
-  src: "/../../public/fonts/Poppins-Variable.ttf",
+  src: "../../public/fonts/Poppins-Variable.ttf",
   variable: "--font-sans",
 });
 
@@ -19,15 +20,32 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <link
+          rel="stylesheet"
+          href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+          integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+          crossOrigin="anonymous"
+        />
+      </head>
       <body
         className={`${supreme.variable} ${poppins.variable} bg-background font-sans leading-6 text-foreground antialiased`}
       >
-        {children}
+        <Suspense>
+          {children}
+        </Suspense>
+        <script
+          src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+          integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+          crossOrigin="anonymous"
+          async
+          defer
+        />
       </body>
     </html>
   );
