@@ -27,7 +27,7 @@ const ArticlePresentation = ({ post }: ArticlePresentationProps) => {
           <div className="absolute inset-0 bg-gradient-to-b from-black/80 to-black/60" />
         </div>
 
-        <h1 className="z-10 col-span-12 font-display text-xl font-medium leading-[110%] tracking-tighter text-white md:col-span-10 md:col-start-2 md:text-xl md:leading-[2.5rem] lg:col-span-8 lg:col-start-3 lg:text-2xl lg:leading-none">
+        <h1 className="z-10 col-span-12 font-display text-xl font-medium leading-[110%] tracking-tighter text-white md:col-span-10 md:col-start-2 md:text-xl md:leading-[2.5rem] lg:col-span-8 lg:col-start-3 lg:text-3xl lg:leading-none">
           {post.title}
         </h1>
         <div className="z-10 col-span-12 flex items-center gap-2 md:col-span-10 md:col-start-2 lg:col-span-8 lg:col-start-3">

@@ -1,4 +1,4 @@
-import { Footer } from "@/components/layout";
+import { Footer, Nav } from "@/components/layout";
 import {
   PartnersGalleryContainer,
   PartnersHeaderContainer,
@@ -9,6 +9,7 @@ import PartnersInsightListConainer from "@/components/pages/partners/partners-in
 const Partners = () => {
   return (
     <>
+      <Nav />
       <PartnersHeaderContainer />
       <PartnersArticleContainer />
       <PartnersGalleryContainer />

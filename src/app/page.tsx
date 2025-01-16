@@ -9,11 +9,12 @@ import {
   PartnersContainer,
   InsightsContainer,
 } from "@/components/pages/home";
-import { Footer } from "@/components/layout";
+import { Footer, Nav } from "@/components/layout";
 
 const Home = () => {
   return (
     <div>
+      <Nav />
       <HeaderContainer />
       <main>
         <AboutContainer />
