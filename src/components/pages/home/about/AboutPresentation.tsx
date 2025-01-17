@@ -40,20 +40,20 @@ const AboutPresentation = ({
 
   useGSAP(() => {
     gsap.registerPlugin(ScrollTrigger);
-
     const timeline = gsap.timeline({
       scrollTrigger: {
         trigger: sectionRef.current,
-        scrub: 1,
         start: "top top",
-        end: () => "100%",
         pin: true,
         immediateRender: false,
         anticipatePin: 1,
+        onEnter: () => timeline.play(),
+        onEnterBack: () => timeline.reverse(),
       },
     });
 
     if (typeof window !== "undefined") {
+      timeline.pause(); // Start the timeline paused
       timeline
         .to(videoInnerContainerRef.current, {
           ease: "none",
