@@ -13,7 +13,7 @@ const AboutHeaderPresentation = ({
 }: AboutHeaderPresentation) => {
   return (
     <header className="md:px-8 px-4 pb-16 pt-8">
-      <div className="relative lg:aspect-banner md:aspect-[5/3] aspect-[3/6] overflow-hidden rounded-2xl bg-black">
+      <div className="relative lg:aspect-banner md:aspect-[5/3] aspect-[3/4] overflow-hidden rounded-2xl bg-black">
         <Image
           width={1920}
           height={1080}

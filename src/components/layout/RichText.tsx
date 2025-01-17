@@ -145,7 +145,7 @@ const RichText: React.FC<RichTextProps> = ({ content }) => {
       case "image":
         return (
           <figure key={index} className="relative my-12">
-            <div className="aspect-video overflow-hidden rounded-2xl">
+            <div className="md:aspect-video aspect-square overflow-hidden rounded-2xl">
               <Image
                 src={node.url}
                 alt={node.alt || ""}

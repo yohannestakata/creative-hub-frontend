@@ -17,7 +17,7 @@ const EventsListPresentation = ({ events }: EventsListPresentationProps) => {
   return (
     <>
       <div className="md:px-8 px-4 pb-12 pt-8">
-        <header className="relative col-span-12 mt-6 aspect-[3/5] overflow-hidden rounded-2xl md:aspect-[5/3] lg:aspect-banner">
+        <header className="relative col-span-12 mt-6 aspect-[3/4] overflow-hidden rounded-2xl md:aspect-[5/3] lg:aspect-banner">
           <Image
             src={events[0].imageUrl}
             alt="Header background"

@@ -2,8 +2,8 @@ import Image from "next/image";
 
 const AboutPassagePresentation = () => {
   return (
-    <section className="grid grid-cols-12 gap-4 md:px-8 px-4 py-16 pb-12">
-      <div className="col-span-12 aspect-[4/3] overflow-hidden rounded-2xl bg-black md:aspect-[5/2] lg:col-span-6 lg:aspect-square">
+    <section className="grid grid-cols-12 lg:gap-4 gap-6 md:px-8 px-4 py-16 pb-12">
+      <div className="col-span-12 aspect-square overflow-hidden rounded-2xl bg-black md:aspect-[5/3] lg:col-span-6 lg:aspect-square">
         <Image
           width={500}
           height={500}
