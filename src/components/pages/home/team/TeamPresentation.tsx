@@ -60,14 +60,16 @@ const TeamPresentation = ({ team }: TeamPresentationProps) => {
           card,
           {
             filter: "contrast(0.5)",
-            rotate: 12,
+            rotate: 20,
             scale: 0.5,
+            yPercent: 30,
             ease: "power1.out",
           },
           {
             filter: "contrast(1)",
             rotate: 0,
             scale: 1,
+            yPercent: 0,
             ease: "power1.out",
             duration: 1,
           },
@@ -76,8 +78,9 @@ const TeamPresentation = ({ team }: TeamPresentationProps) => {
           card,
           {
             filter: "contrast(0.5)",
-            rotate: -12,
+            rotate: -20,
             scale: 0.5,
+            yPercent: 30,
             ease: "power1.in",
             duration: 1,
           },
