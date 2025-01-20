@@ -60,7 +60,7 @@ const AboutServicesPresentation = ({ services }: AboutServicesPresentation) => {
         sectionTitle="Your Working Day at The Hub"
         sectionName="Services"
       />
-      <div className="mt-8 flex flex-col md:px-8 px-4">
+      <div className="mt-8 flex flex-col px-4 md:px-8">
         {services.map((service) => (
           <div
             key={service.id}
@@ -69,7 +69,7 @@ const AboutServicesPresentation = ({ services }: AboutServicesPresentation) => {
           >
             <div
               ref={setImageRef}
-              className="relative col-span-12  overflow-hidden rounded-2xl bg-black md:aspect-banner lg:col-span-6 aspect-square lg:aspect-square"
+              className="relative col-span-12 aspect-square overflow-hidden rounded-2xl bg-black md:aspect-banner lg:col-span-6 lg:aspect-square"
             >
               <Image
                 src={service.imageUrl}
@@ -80,10 +80,12 @@ const AboutServicesPresentation = ({ services }: AboutServicesPresentation) => {
               />
             </div>
             <div className="col-span-12 lg:col-span-5 lg:col-start-8">
-              <h2 className="font-display text-xl font-medium leading-none tracking-tight lg:text-2xl">
+              <h2 className="font-display text-xl font-medium leading-none tracking-tight lg:text-2xl 2xl:text-2xl">
                 {service.title}
               </h2>
-              <p className="mt-4">{service.description}</p>
+              <p className="mt-4 2xl:text-lg 2xl:leading-normal">
+                {service.description}
+              </p>
             </div>
           </div>
         ))}

@@ -74,13 +74,13 @@ const EventCalendarPresentation: React.FC<EventCalendarPresentationProps> = ({
         sectionName="Event Calendar"
         sectionTitle="Timeline of Great Happenings"
       />
-      <div className="mt-10 grid grid-cols-1 gap-4 md:px-8 px-4 lg:grid-cols-12">
-        <div className="relative col-span-12 overflow-hidden lg:col-span-6 lg:order-1 order-2">
+      <div className="mt-10 grid grid-cols-1 gap-4 px-4 md:px-8 lg:grid-cols-12">
+        <div className="relative order-2 col-span-12 overflow-hidden lg:order-1 lg:col-span-6">
           <div className="flex h-full w-full flex-col gap-2 overflow-hidden lg:absolute">
             <form>
               <select
                 id="months"
-                className="block w-full rounded-lg bg-muted p-3 leading-none focus:border-2 focus:border-primary focus:outline-none focus:ring-primary"
+                className="block w-full rounded-lg bg-muted p-3 leading-none focus:border-2 focus:border-primary focus:outline-none focus:ring-primary 2xl:text-lg"
                 value={months[selectedMonth]}
                 onChange={(e) =>
                   setSelectedMonth(months.indexOf(e.target.value))
@@ -118,7 +118,7 @@ const EventCalendarPresentation: React.FC<EventCalendarPresentationProps> = ({
                     <li
                       key={event.id}
                       className={twMerge(
-                        "cursor-pointer space-y-2 rounded-2xl p-3 leading-none transition-colors",
+                        "cursor-pointer space-y-2 rounded-2xl p-4 text-lg leading-none transition-colors",
                         selectedEvent?.id === event.id
                           ? "bg-primary"
                           : "bg-muted text-foreground",
@@ -126,7 +126,9 @@ const EventCalendarPresentation: React.FC<EventCalendarPresentationProps> = ({
                       onClick={() => setSelectedEvent(event)}
                     >
                       <div className="font-semibold">
-                        <span className="text-lg">{formattedDate}</span>
+                        <span className="text-lg 2xl:text-xl">
+                          {formattedDate}
+                        </span>
                         <span>
                           {" "}
                           {startTime} - {endTime}
@@ -145,7 +147,7 @@ const EventCalendarPresentation: React.FC<EventCalendarPresentationProps> = ({
           </div>
         </div>
 
-        <div className="col-span-12 lg:col-span-6 lg:order-2 order-1">
+        <div className="order-1 col-span-12 lg:order-2 lg:col-span-6">
           {selectedEvent ? (
             <div className="relative col-span-12 aspect-[3/5] overflow-hidden rounded-2xl md:aspect-[5/3] lg:aspect-square">
               <Image
@@ -158,16 +160,16 @@ const EventCalendarPresentation: React.FC<EventCalendarPresentationProps> = ({
               />
               <div className="absolute inset-0 z-10 flex flex-col justify-end bg-gradient-to-bl from-black/40 to-black/80 p-8">
                 <div className="space-y-3">
-                  <div className="w-fit rounded-md bg-background p-2 leading-none">
+                  <div className="w-fit rounded-md bg-background p-2 leading-none 2xl:text-lg">
                     {new Intl.DateTimeFormat("en-US", {
                       dateStyle: "medium",
                       timeStyle: "short",
                     }).format(new Date(selectedEvent.dateTime))}
                   </div>
-                  <div className="font-display text-xl font-medium leading-none tracking-tighter text-background lg:text-2xl">
+                  <div className="font-display text-xl font-medium leading-none tracking-tighter text-background lg:text-2xl 2xl:text-3xl">
                     {selectedEvent.title}
                   </div>
-                  <div className="line-clamp-2 text-background opacity-60">
+                  <div className="line-clamp-2 text-background opacity-60 2xl:text-lg 2xl:leading-normal">
                     {selectedEvent.description}
                   </div>
                 </div>

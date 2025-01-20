@@ -77,10 +77,12 @@ const ServicesPresentation = ({ services }: ServicesPresentationProps) => {
                   }}
                 >
                   <div className="flex flex-col gap-3 text-background md:w-1/2">
-                    <span className="text-display text-xl font-medium leading-none">
+                    <span className="text-display text-xl font-medium leading-none 2xl:text-2xl">
                       {service.title}
                     </span>
-                    <span className="opacity-60">{service.copy}</span>
+                    <span className="opacity-60 2xl:text-lg 2xl:leading-tight">
+                      {service.copy}
+                    </span>
                   </div>
                 </div>
               ))}

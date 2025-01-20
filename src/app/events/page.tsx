@@ -1,4 +1,4 @@
-import { Footer } from "@/components/layout";
+import { Footer, Nav } from "@/components/layout";
 import {
   EventsListContainer,
   EventCalendarContainer,
@@ -8,6 +8,7 @@ import {
 const Events = () => {
   return (
     <>
+      <Nav />
       <EventsListContainer />
       <EventCalendarContainer />
       <PastEventsContainer />

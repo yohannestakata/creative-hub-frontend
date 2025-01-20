@@ -6,10 +6,10 @@ import iceAddisImg from "@/../public/iceaddis.png";
 
 const AboutCollaboratorsPresentation = () => {
   return (
-    <section className="md:px-8 px-4 py-8 md:py-16">
+    <section className="px-4 py-8 md:px-8 md:py-16">
       <div className="grid grid-cols-12 items-center gap-6 border-b border-t py-12">
-        <h2 className="col-span-full font-display text-lg font-medium uppercase leading-none tracking-tighter md:text-center lg:text-xl">
-          Global Collaborations With{" "}
+        <h2 className="col-span-full font-display text-lg font-medium uppercase leading-none tracking-tighter md:text-center lg:text-xl 2xl:text-2xl">
+          Global Collaborations{" "}
         </h2>
         <div className="col-span-6 md:col-span-2 md:w-11/12 lg:w-full">
           <Image

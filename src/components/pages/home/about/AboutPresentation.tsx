@@ -44,16 +44,17 @@ const AboutPresentation = ({
       scrollTrigger: {
         trigger: sectionRef.current,
         start: "top top",
+        end: "bottom top",
         pin: true,
+        scrub: 1,
         immediateRender: false,
         anticipatePin: 1,
-        onEnter: () => timeline.play(),
-        onEnterBack: () => timeline.reverse(),
+        // onEnter: () => timeline.play(),
+        // onEnterBack: () => timeline.reverse(),
       },
     });
 
     if (typeof window !== "undefined") {
-      timeline.pause(); // Start the timeline paused
       timeline
         .to(videoInnerContainerRef.current, {
           ease: "none",
@@ -117,7 +118,7 @@ const AboutPresentation = ({
           className="col-span-full h-fit pt-8 md:col-span-8 md:col-start-3 md:pt-16"
           ref={textContainerRef}
         >
-          <h2 className="font-display text-2xl font-medium uppercase leading-none tracking-tighter md:text-3xl">
+          <h2 className="font-display text-2xl font-medium uppercase leading-none tracking-tighter md:text-3xl 2xl:text-4xl">
             {title.split(" ").map((word, wordIndex) => (
               <span key={wordIndex} className="inline-block">
                 {word.split("").map((letter, letterIndex) => (
@@ -135,7 +136,9 @@ const AboutPresentation = ({
             ))}
           </h2>
 
-          <p className="mt-6 leading-6 text-muted-foreground">{copy}</p>
+          <p className="mt-6 leading-6 text-muted-foreground xl:leading-normal 2xl:text-lg">
+            {copy}
+          </p>
         </div>
         <div
           className="absolute left-0 top-full mt-6 w-full pl-4 md:pl-[calc((100%_-_((11_*_24px)_+_64px))_/_12_*_2_+_24px_*_2_+_32px)]"

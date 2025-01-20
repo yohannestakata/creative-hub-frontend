@@ -27,7 +27,7 @@ const AboutHeaderPresentation = ({
             <h1 className="font-display text-2xl font-medium leading-none tracking-tighter lg:text-3xl">
               {title}
             </h1>
-            <p className="mt-4">{copy} </p>
+            <p className="mt-4 2xl:text-lg 2xl:leading-normal">{copy} </p>
           </div>
         </div>
       </div>

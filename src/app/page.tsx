@@ -9,12 +9,13 @@ import {
   PartnersContainer,
   InsightsContainer,
 } from "@/components/pages/home";
-import { Footer, Nav } from "@/components/layout";
+import { Footer } from "@/components/layout";
+import { NavPresentation } from "@/components/pages/home/nav";
 
 const Home = () => {
   return (
     <div>
-      <Nav />
+      <NavPresentation />
       <HeaderContainer />
       <main>
         <AboutContainer />
@@ -26,7 +27,6 @@ const Home = () => {
         <TeamContainer />
         <InsightsContainer />
       </main>
-
       <Footer />
     </div>
   );

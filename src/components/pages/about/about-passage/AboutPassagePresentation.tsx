@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const AboutPassagePresentation = () => {
   return (
-    <section className="grid grid-cols-12 lg:gap-4 gap-6 md:px-8 px-4 py-16 pb-12">
+    <section className="grid grid-cols-12 gap-6 px-4 py-16 pb-12 md:px-8 lg:gap-4">
       <div className="col-span-12 aspect-square overflow-hidden rounded-2xl bg-black md:aspect-[5/3] lg:col-span-6 lg:aspect-square">
         <Image
           width={500}
@@ -13,10 +13,10 @@ const AboutPassagePresentation = () => {
         />
       </div>
       <div className="col-span-12 flex flex-col gap-4 lg:col-span-6">
-        <h2 className="font-display text-xl lg:text-2xl font-medium leading-none tracking-tighter">
+        <h2 className="font-display text-xl font-medium leading-none tracking-tighter lg:text-2xl 2xl:text-2xl">
           Celebrating Notable Guests
         </h2>
-        <p>
+        <p className="2xl:text-lg 2xl:leading-normal">
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et beatae
           nihil possimus. Harum rerum et quas, aliquid deleniti possimus
           assumenda nihil laboriosam aspernatur aperiam perferendis distinctio
@@ -25,7 +25,7 @@ const AboutPassagePresentation = () => {
           in accusantium nisi ipsa quis, doloremque nemo necessitatibus
           consequuntur rerum quae enim, neque veritatis ducimus.
         </p>
-        <p>
+        <p className="2xl:text-lg 2xl:leading-normal">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam
           voluptate autem nulla! Ad deserunt saepe iure possimus, libero, fuga
           repellat similique dolores consectetur tenetur doloremque cumque,

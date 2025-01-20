@@ -124,8 +124,10 @@ const TeamPresentation = ({ team }: TeamPresentationProps) => {
                   />
                 </div>
                 <div className="mt-4 flex flex-col gap-2 leading-none">
-                  <span className="text-lg font-semibold">{person.name}</span>
-                  <span className="text-muted-foreground">
+                  <span className="text-lg font-semibold 2xl:text-xl">
+                    {person.name}
+                  </span>
+                  <span className="text-muted-foreground 2xl:text-lg">
                     {person.position}
                   </span>
                 </div>

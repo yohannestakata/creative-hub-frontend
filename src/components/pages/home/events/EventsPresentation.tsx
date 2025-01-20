@@ -78,16 +78,16 @@ const EventsPresentation = ({ services }: EventsPresentationProps) => {
                   }}
                 >
                   <div className="flex flex-col text-background md:w-1/2">
-                    <span className="inline-block w-fit rounded bg-background p-2 text-sm font-semibold leading-none text-foreground">
+                    <span className="inline-block w-fit rounded bg-background p-2 text-sm font-semibold leading-none text-foreground 2xl:text-base">
                       {new Intl.DateTimeFormat("en-US", {
                         dateStyle: "medium",
                         timeStyle: "short",
                       }).format(new Date(service.dateTime))}
                     </span>
-                    <span className="text-display mt-4 text-xl font-medium leading-none">
+                    <span className="text-display mt-4 text-xl font-medium leading-none 2xl:text-2xl">
                       {service.title}
                     </span>
-                    <span className="-mb-1 mt-3 opacity-60">
+                    <span className="-mb-1 mt-3 opacity-60 2xl:text-lg 2xl:leading-normal">
                       {service.copy}
                     </span>
                   </div>

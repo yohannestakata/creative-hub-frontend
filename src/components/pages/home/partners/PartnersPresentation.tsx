@@ -7,8 +7,8 @@ import Image from "next/image";
 const PartnersPresentation = () => {
   return (
     <section className="px-8 py-8 md:py-16">
-      <div className="grid grid-cols-12 items-center gap-6 border-b border-t py-12">
-        <h2 className="col-span-full font-display text-xl font-medium uppercase leading-none tracking-tighter md:text-center">
+      <div className="grid grid-cols-12 items-center gap-4 gap-y-8 border-b border-t py-12 md:gap-6">
+        <h2 className="col-span-full font-display text-xl font-medium uppercase leading-none tracking-tighter md:text-center 2xl:text-2xl">
           Empowering creativity through global partnerships
         </h2>
         <div className="col-span-6 md:col-span-2">
