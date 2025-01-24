@@ -12,7 +12,7 @@ const SmoothScrolling: React.FC<SmoothScrollingProps> = ({ children }) => {
       options={{
         duration: 2,
         smoothWheel: true,
-        wheelMultiplier: 0.45,
+        wheelMultiplier: 0.6,
       }}
     >
       {children}
