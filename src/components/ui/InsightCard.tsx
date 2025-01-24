@@ -42,7 +42,7 @@ const InsightCard = ({
             timeStyle: "short",
           }).format(new Date(blog.dateTime))}
         </span>
-        <span className="mt-2 line-clamp-2 text-[20px] font-semibold leading-[120%] group-hover:underline md:text-lg 2xl:text-xl">
+        <span className="mt-1 line-clamp-2 text-[20px] font-semibold leading-[120%] group-hover:underline md:text-lg 2xl:text-xl">
           {blog.title}
         </span>
         <span className="mt-2 line-clamp-2 text-muted-foreground 2xl:text-lg 2xl:leading-normal">
