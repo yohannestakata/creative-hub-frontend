@@ -32,10 +32,6 @@
   }
 }
 
-html {
-  font-size: 16px;
-}
-
 @layer utilities {
   .text-outline {
     @apply text-white;
@@ -54,4 +50,8 @@ html {
       text-shadow: none;
     }
   }
+}
+
+html {
+  font-size: 16px;
 }

@@ -40,6 +40,7 @@ const AboutPresentation = ({
 
   useGSAP(() => {
     gsap.registerPlugin(ScrollTrigger);
+
     const timeline = gsap.timeline({
       scrollTrigger: {
         trigger: sectionRef.current,
@@ -49,18 +50,21 @@ const AboutPresentation = ({
         scrub: 1,
         immediateRender: false,
         anticipatePin: 1,
-        // onEnter: () => timeline.play(),
-        // onEnterBack: () => timeline.reverse(),
       },
     });
 
     if (typeof window !== "undefined") {
       timeline
-        .to(videoInnerContainerRef.current, {
-          ease: "none",
-          width: "100%",
-          height: window.innerHeight - 48,
-        })
+        .to(
+          videoInnerContainerRef.current,
+          {
+            ease: "none",
+            width: "100%",
+            height: window.innerHeight - 48,
+            scale: 0.98,
+          },
+          "",
+        )
         .to(
           videoOuterContainerRef.current,
           {
@@ -77,9 +81,10 @@ const AboutPresentation = ({
           textContainerRef.current,
           { ease: "none", x: -64, y: 64, scale: 0.8, opacity: 0 },
           "<",
-        );
+        )
+        .to(videoInnerContainerRef.current, { scale: 1 }, ">");
     }
-  }, []);
+  });
 
   useGSAP(() => {
     const letters = document.querySelectorAll(".letter");

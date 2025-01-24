@@ -122,18 +122,22 @@ const useHeaderAnimation = (
         },
         "<",
       )
+
       .to(
         imageRef.current,
         {
           scale: ANIMATION_CONFIG.SCALE_AMOUNT,
         },
         "<",
+      )
+      .to(
+        overlay2Ref.current,
+        {
+          ease: "none",
+          scale: 1.1,
+        },
+        ">",
       );
-
-    return () => {
-      timeline.kill();
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-    };
   });
 };
 

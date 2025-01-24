@@ -11,10 +11,11 @@ import {
 } from "@/components/pages/home";
 import { Footer } from "@/components/layout";
 import { NavPresentation } from "@/components/pages/home/nav";
+import { SmoothScrolling } from "@/components/ui";
 
 const Home = () => {
   return (
-    <div>
+    <SmoothScrolling>
       <NavPresentation />
       <HeaderContainer />
       <main>
@@ -28,7 +29,7 @@ const Home = () => {
         <InsightsContainer />
       </main>
       <Footer />
-    </div>
+    </SmoothScrolling>
   );
 };
 

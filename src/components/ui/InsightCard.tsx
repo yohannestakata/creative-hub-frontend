@@ -22,7 +22,7 @@ const InsightCard = ({
   grayscale = false,
 }: InsightCardProps) => {
   const CardContent = (
-    <>
+    <div className="group">
       <div className="aspect-square overflow-hidden rounded-2xl">
         <Image
           src={blog.imageUrl}
@@ -30,26 +30,26 @@ const InsightCard = ({
           height={400}
           alt={blog.title}
           className={twJoin(
-            "h-full w-full object-cover",
+            "h-full w-full object-cover transition-transform group-hover:scale-105",
             grayscale && "grayscale",
           )}
         />
       </div>
       <div className="mt-3 flex flex-col 2xl:text-lg 2xl:leading-normal">
-        <span>
+        <span className="text-sm 2xl:text-base">
           {new Intl.DateTimeFormat("en-US", {
             dateStyle: "medium",
             timeStyle: "short",
           }).format(new Date(blog.dateTime))}
         </span>
-        <span className="mt-2 line-clamp-2 text-[20px] font-semibold leading-[120%] md:text-lg 2xl:text-xl">
+        <span className="mt-2 line-clamp-2 text-[20px] font-semibold leading-[120%] group-hover:underline md:text-lg 2xl:text-xl">
           {blog.title}
         </span>
         <span className="mt-2 line-clamp-2 text-muted-foreground 2xl:text-lg 2xl:leading-normal">
           {blog.description}
         </span>
       </div>
-    </>
+    </div>
   );
 
   return clickable ? (
