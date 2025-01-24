@@ -61,7 +61,7 @@ const AboutPresentation = ({
             ease: "none",
             width: "100%",
             height: window.innerHeight - 48,
-            scale: 0.98,
+            scale: 0.95,
           },
           "",
         )
