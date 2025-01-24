@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { useCallback, useEffect, useRef } from 'react';
+import { useCallback, useEffect, useRef } from "react";
 
-import Image from 'next/image';
+import Image from "next/image";
 
 const useJoinDialog = () => {
   const dialogRef = useRef<HTMLDialogElement>(null);
@@ -23,7 +23,7 @@ const useJoinDialog = () => {
     const dialog = dialogRef.current;
     if (!dialog) return;
 
-    dialog.addEventListener('click', e => {
+    dialog.addEventListener("click", (e) => {
       if (!dialogRef.current) return;
 
       const dialogDimensions = dialog.getBoundingClientRect();
@@ -37,7 +37,7 @@ const useJoinDialog = () => {
       }
     });
 
-    return () => dialog.removeEventListener('click', () => {});
+    return () => dialog.removeEventListener("click", () => {});
   });
 
   const Dialog = () => (
@@ -55,7 +55,7 @@ const useJoinDialog = () => {
           />
         </div>
         <div className="col-span-6">
-          <h2 className="font-display text-2xl font-medium uppercase leading-none tracking-tighter">
+          <h2 className="font-display text-3xl font-medium uppercase leading-none tracking-tighter">
             Join the creative community
           </h2>
           <form className="mt-4">

@@ -84,7 +84,7 @@ const EventsPresentation = ({ services }: EventsPresentationProps) => {
                         timeStyle: "short",
                       }).format(new Date(service.dateTime))}
                     </span>
-                    <span className="text-display mt-4 text-xl font-medium leading-none 2xl:text-2xl">
+                    <span className="text-display mt-4 text-2xl font-medium leading-none 2xl:text-3xl">
                       {service.title}
                     </span>
                     <span className="-mb-1 mt-3 opacity-60 2xl:text-lg 2xl:leading-normal">

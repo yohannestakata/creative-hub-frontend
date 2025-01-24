@@ -58,14 +58,14 @@ const TestimonialsPresentation = ({
         <div className="-ml-4 flex h-full touch-pan-y py-6">
           {testimonials.map((testimonial) => (
             <div
-              className="h-full min-w-0 flex-[0_0_100%] translate-x-0 transform pl-4"
+              className="flex h-full min-w-0 flex-[0_0_100%] translate-x-0 transform flex-col py-16 pl-4"
               key={testimonial.id}
             >
-              <p className="font-display text-xl font-medium leading-none tracking-tighter md:text-2xl 2xl:text-3xl">
+              <p className="font-display text-xl font-medium leading-none tracking-tighter md:text-3xl 2xl:text-4xl">
                 {testimonial.testimonial}
               </p>
-              <div className="mt-6 flex items-end gap-4 md:w-3/4">
-                <div className="aspect-square w-32 overflow-hidden rounded-2xl">
+              <div className="mt-auto flex items-end gap-4 md:w-3/4">
+                <div className="aspect-square w-28 overflow-hidden rounded-2xl 2xl:w-32">
                   <Image
                     src={testimonial.profileAvatarUrl}
                     width={100}
@@ -75,10 +75,10 @@ const TestimonialsPresentation = ({
                   />
                 </div>
                 <div className="flex w-1/2 flex-col gap-2">
-                  <span className="text-lg font-semibold leading-none tracking-tight xl:text-xl">
+                  <span className="text-lg font-semibold leading-none tracking-tight 2xl:text-xl">
                     {testimonial.profileName}
                   </span>
-                  <span className="leading-none tracking-tight text-muted-foreground xl:text-lg xl:leading-tight">
+                  <span className="leading-none tracking-tight text-muted-foreground xl:leading-tight 2xl:text-xl">
                     {testimonial.profilePosition}
                   </span>
                 </div>

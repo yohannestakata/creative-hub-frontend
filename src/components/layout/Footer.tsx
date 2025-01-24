@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import {
   FacebookIcon,
@@ -9,10 +9,10 @@ import {
   Smartphone,
   Twitter,
   Youtube,
-} from 'lucide-react';
-import Link from 'next/link';
+} from "lucide-react";
+import Link from "next/link";
 
-import { useJoinDialog } from '../ui';
+import { useJoinDialog } from "../ui";
 
 const Footer = () => {
   const { Dialog, showDialog } = useJoinDialog();
@@ -22,7 +22,7 @@ const Footer = () => {
       <footer className="">
         <div className="flex flex-col gap-12 px-4 py-16 md:flex-row md:gap-4 md:px-8">
           <div className="flex-1">
-            <span className="font-display text-xl font-medium uppercase leading-none tracking-tighter lg:text-2xl 2xl:text-3xl">
+            <span className="font-display text-xl font-medium uppercase leading-none tracking-tighter lg:text-3xl 2xl:text-4xl">
               Join the Creative Community
             </span>
             <p className="mt-4 text-muted-foreground 2xl:text-lg 2xl:leading-normal">
@@ -117,7 +117,7 @@ const Footer = () => {
             Copyright &copy; 2025 Creative Hub Ethiopia | All rights reserved
           </div>
           <div className="text-left lg:text-center">
-            Designed and developed by{' '}
+            Designed and developed by{" "}
             <Link href="/" className="underline">
               Ras Tech
             </Link>
