@@ -55,6 +55,7 @@ const AboutPresentation = ({
 
     if (typeof window !== "undefined") {
       timeline
+        .to(videoInnerContainerRef.current, { scale: 1.05 }, "")
         .to(
           videoInnerContainerRef.current,
           {
@@ -63,7 +64,7 @@ const AboutPresentation = ({
             height: window.innerHeight - 48,
             scale: 0.95,
           },
-          "",
+          "middle",
         )
         .to(
           videoOuterContainerRef.current,
@@ -74,13 +75,13 @@ const AboutPresentation = ({
             paddingLeft: 32,
             paddingRight: 32,
           },
-          "<",
+          "middle",
         )
         .to(bulbImageRef.current, { filter: "blur(20px)" }, "<")
         .to(
           textContainerRef.current,
           { ease: "none", x: -64, y: 64, scale: 0.8, opacity: 0 },
-          "<",
+          "middle",
         )
         .to(videoInnerContainerRef.current, { scale: 1 }, ">");
     }

@@ -42,19 +42,28 @@ const Footer = () => {
               <span className="font-semibold uppercase">Contact</span>
               <ul className="mt-3 space-y-2 2xl:mt-5 2xl:space-y-4">
                 <li>
-                  <Link href="/" className="flex items-center gap-2">
+                  <Link
+                    href="/"
+                    className="flex items-center gap-2 hover:underline hover:underline-offset-4"
+                  >
                     <Smartphone />
                     <span>+251 965067723</span>
                   </Link>
                 </li>
                 <li>
-                  <Link href="/" className="flex items-center gap-2">
+                  <Link
+                    href="/"
+                    className="flex items-center gap-2 hover:underline hover:underline-offset-4"
+                  >
                     <Mail />
                     <span>info@creativehub.et</span>
                   </Link>
                 </li>
                 <li>
-                  <Link href="/" className="flex items-center gap-2">
+                  <Link
+                    href="/"
+                    className="flex items-center gap-2 hover:underline hover:underline-offset-4"
+                  >
                     <Send />
                     <span>Get in touch</span>
                   </Link>
@@ -65,19 +74,44 @@ const Footer = () => {
               <span className="font-semibold uppercase">Sitemap</span>
               <ul className="mt-3 grid grid-cols-1 gap-2 2xl:mt-5 2xl:space-y-4">
                 <li>
-                  <Link href="/">Home</Link>
+                  <Link
+                    href="/"
+                    className="hover:underline hover:underline-offset-4"
+                  >
+                    Home
+                  </Link>
                 </li>
                 <li>
-                  <Link href="/insights">Insights</Link>
+                  <Link
+                    href="/insights"
+                    className="hover:underline hover:underline-offset-4"
+                  >
+                    Insights
+                  </Link>
                 </li>
                 <li>
-                  <Link href="/events">Events</Link>
+                  <Link
+                    href="/events"
+                    className="hover:underline hover:underline-offset-4"
+                  >
+                    Events
+                  </Link>
                 </li>
                 <li>
-                  <Link href="/partners">Partners</Link>
+                  <Link
+                    href="/partners"
+                    className="hover:underline hover:underline-offset-4"
+                  >
+                    Partners
+                  </Link>
                 </li>
                 <li>
-                  <Link href="/about">About</Link>
+                  <Link
+                    href="/about"
+                    className="hover:underline hover:underline-offset-4"
+                  >
+                    About
+                  </Link>
                 </li>
               </ul>
             </div>

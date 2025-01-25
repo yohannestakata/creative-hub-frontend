@@ -30,7 +30,7 @@ const InsightCard = ({
           height={400}
           alt={blog.title}
           className={twJoin(
-            "h-full w-full object-cover transition-transform group-hover:scale-105",
+            "h-full w-full object-cover transition-transform duration-200 group-hover:scale-110",
             grayscale && "grayscale",
           )}
         />
@@ -42,7 +42,7 @@ const InsightCard = ({
             timeStyle: "short",
           }).format(new Date(blog.dateTime))}
         </span>
-        <span className="mt-1 line-clamp-2 text-[20px] font-semibold leading-[120%] group-hover:underline md:text-lg 2xl:text-xl">
+        <span className="mt-1 line-clamp-2 text-[20px] font-semibold leading-[120%] group-hover:underline group-hover:underline-offset-4 md:text-lg 2xl:text-xl">
           {blog.title}
         </span>
         <span className="mt-2 line-clamp-2 text-muted-foreground 2xl:text-lg 2xl:leading-normal">

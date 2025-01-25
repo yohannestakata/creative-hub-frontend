@@ -1,5 +1,4 @@
 "use client";
-
 import { SectionTitle } from "@/components/ui";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
@@ -24,8 +23,10 @@ const EventsPresentation = ({ services }: EventsPresentationProps) => {
 
   useGSAP(() => {
     gsap.registerPlugin(ScrollTrigger);
-
     if (!cardsRef.current) return;
+
+    const cards = gsap.utils.toArray<HTMLDivElement>(".card-item");
+    const totalCards = cards.length;
 
     const timeline = gsap.timeline({
       scrollTrigger: {
@@ -35,6 +36,12 @@ const EventsPresentation = ({ services }: EventsPresentationProps) => {
         end: `+=${cardsRef.current.scrollWidth - cardsRef.current.offsetWidth}`,
         pin: true,
         immediateRender: false,
+        snap: {
+          snapTo: 1 / (totalCards - 1),
+          duration: { min: 0.2, max: 0.5 },
+          delay: 0,
+          ease: "power1.inOut",
+        },
       },
     });
 
@@ -57,8 +64,6 @@ const EventsPresentation = ({ services }: EventsPresentationProps) => {
         sectionName="Upcoming Events"
         sectionTitle="Shaping the Future"
       />
-
-      {/* Services */}
       <div className="mt-4">
         <div
           className="h-screen w-full overflow-hidden py-6"
@@ -72,7 +77,7 @@ const EventsPresentation = ({ services }: EventsPresentationProps) => {
               {services.map((service) => (
                 <div
                   key={service.id}
-                  className="flex h-full w-full flex-shrink-0 items-end rounded-2xl bg-foreground bg-cover bg-center p-6 md:p-12"
+                  className="card-item flex h-full w-full flex-shrink-0 items-end rounded-2xl bg-foreground bg-cover bg-center p-6 md:p-12"
                   style={{
                     backgroundImage: `linear-gradient(rgba(39, 21, 3, 0.40), rgba(39, 21, 3, 0.40)), url('${service.imageUrl}')`,
                   }}
