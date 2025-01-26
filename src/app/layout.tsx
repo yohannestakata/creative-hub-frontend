@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import localFont from "next/font/local";
-import { Suspense } from "react";
 import "./globals.css";
+import SplashScreen from "@/components/ui/SplashScreen";
 
 const supreme = localFont({
   src: "../../public/fonts/Supreme-Variable.ttf",
@@ -36,9 +36,7 @@ export default function RootLayout({
       <body
         className={`${supreme.variable} ${poppins.variable} bg-background font-sans leading-6 text-foreground antialiased`}
       >
-        <Suspense>
-          {children}
-        </Suspense>
+        <SplashScreen>{children}</SplashScreen>
         <script
           src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
           integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
