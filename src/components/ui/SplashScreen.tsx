@@ -43,7 +43,7 @@ const SplashScreen: React.FC<SplashScreenProps> = ({ children }) => {
             height={1000}
             className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
           />
-          <div className="mt-4 flex animate-pulse overflow-clip font-display text-4xl font-medium uppercase leading-none tracking-tighter">
+          <div className="mt-4 flex overflow-clip font-display text-4xl font-medium uppercase leading-none tracking-tighter">
             {"Selam...".split("").map((char, index) => (
               <span
                 key={index}
