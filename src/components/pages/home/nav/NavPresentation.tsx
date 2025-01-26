@@ -55,7 +55,7 @@ export default function NavPresentation() {
           </Link>
         </div>
         <button
-          className="flex rounded-full bg-primary px-4 py-2 text-[14px] leading-none md:px-6 md:py-3 md:text-base 2xl:text-lg"
+          className="rounded-full bg-primary px-4 py-2 text-base leading-none md:px-6 md:py-3 md:text-base"
           onClick={showDialog}
         >
           Join now

@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useRef } from "react";
 
 import Image from "next/image";
+import { X } from "lucide-react";
 
 const useJoinDialog = () => {
   const dialogRef = useRef<HTMLDialogElement>(null);
@@ -55,7 +56,12 @@ const useJoinDialog = () => {
           />
         </div>
         <div className="col-span-6">
-          <h2 className="font-display text-3xl font-medium uppercase leading-none tracking-tighter">
+          <div className="flex flex-row-reverse">
+            <button onClick={hideDialog}>
+              <X />
+            </button>
+          </div>
+          <h2 className="mt-6 font-display text-3xl font-medium uppercase leading-none tracking-tighter 2xl:text-4xl">
             Join the creative community
           </h2>
           <form className="mt-4">
@@ -89,13 +95,13 @@ const useJoinDialog = () => {
             <div className="mt-3 flex justify-end gap-2">
               <button
                 onClick={hideDialog}
-                className="rounded-full bg-muted px-6 py-2"
+                className="rounded-full bg-muted px-4 py-2 text-base leading-none md:px-6 md:py-3 md:text-base"
               >
                 Close
               </button>
               <button
                 type="submit"
-                className="rounded-full bg-primary px-6 py-2"
+                className="rounded-full bg-primary px-4 py-2 text-base leading-none md:px-6 md:py-3 md:text-base"
               >
                 Join now
               </button>
