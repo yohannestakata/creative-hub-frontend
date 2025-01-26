@@ -7,7 +7,7 @@ const Insights = () => {
       <Nav />
       <main className="pt-8">
         <header className="grid grid-cols-12 gap-4 px-8">
-          <h1 className="col-span-full font-display text-xl font-medium uppercase leading-none tracking-tighter md:text-2xl lg:col-span-10 2xl:text-3xl">
+          <h1 className="col-span-full font-display text-xl font-medium uppercase leading-none tracking-tighter md:col-span-10 md:text-3xl">
             What You Want to Know About Creative Hub
           </h1>
         </header>

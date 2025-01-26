@@ -38,7 +38,7 @@ const TeamPresentation = ({ team }: TeamPresentationProps) => {
         start: "top top",
         end: () => `+=${Math.abs(totalMovement)}`,
         pin: true,
-        scrub: 1,
+        scrub: true,
         anticipatePin: 1,
         invalidateOnRefresh: true,
       },
@@ -51,7 +51,7 @@ const TeamPresentation = ({ team }: TeamPresentationProps) => {
           containerAnimation: scrollTween,
           start: "center right",
           end: "center left",
-          scrub: 1,
+          scrub: true,
         },
       });
 
@@ -92,7 +92,7 @@ const TeamPresentation = ({ team }: TeamPresentationProps) => {
   return (
     <section className="py-8 md:py-16">
       <div className="grid grid-cols-12 gap-4">
-        <h2 className="col-span-full text-balance text-center font-display text-xl font-medium uppercase leading-none tracking-tighter md:col-span-6 md:col-start-4 md:text-3xl 2xl:text-4xl">
+        <h2 className="col-span-full text-balance text-center font-display text-xl font-medium uppercase leading-none tracking-tighter md:col-span-6 md:col-start-4 md:text-3xl">
           The Team Behind Creative Hub
         </h2>
       </div>
@@ -124,10 +124,8 @@ const TeamPresentation = ({ team }: TeamPresentationProps) => {
                   />
                 </div>
                 <div className="mt-4 flex flex-col gap-2 leading-none">
-                  <span className="text-lg font-semibold 2xl:text-xl">
-                    {person.name}
-                  </span>
-                  <span className="text-muted-foreground 2xl:text-lg">
+                  <span className="text-lg font-semibold">{person.name}</span>
+                  <span className="text-lg text-muted-foreground">
                     {person.position}
                   </span>
                 </div>

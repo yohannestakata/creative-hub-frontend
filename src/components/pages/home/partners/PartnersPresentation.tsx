@@ -8,7 +8,7 @@ const PartnersPresentation = () => {
   return (
     <section className="px-8 py-8 md:py-16">
       <div className="grid grid-cols-12 items-center gap-4 gap-y-16 border-b border-t py-12 md:gap-6">
-        <h2 className="col-span-full font-display text-2xl font-medium uppercase leading-none tracking-tighter md:text-center 2xl:text-3xl">
+        <h2 className="col-span-full font-display text-2xl font-medium uppercase leading-none tracking-tighter md:text-center ">
           Empowering creativity through global partnerships
         </h2>
         <div className="col-span-6 md:col-span-2">

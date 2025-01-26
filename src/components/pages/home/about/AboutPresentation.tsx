@@ -47,7 +47,7 @@ const AboutPresentation = ({
         start: "top top",
         end: "bottom top",
         pin: true,
-        scrub: 1,
+        scrub: true,
         immediateRender: false,
         anticipatePin: 1,
       },
@@ -124,7 +124,7 @@ const AboutPresentation = ({
           className="col-span-full h-fit pt-8 md:col-span-8 md:col-start-3 md:pt-16"
           ref={textContainerRef}
         >
-          <h2 className="font-display text-2xl font-medium uppercase leading-none tracking-tighter md:text-4xl 2xl:text-5xl">
+          <h2 className="font-display text-2xl font-medium uppercase leading-none tracking-tighter md:text-4xl">
             {title.split(" ").map((word, wordIndex) => (
               <span key={wordIndex} className="inline-block">
                 {word.split("").map((letter, letterIndex) => (
@@ -142,7 +142,7 @@ const AboutPresentation = ({
             ))}
           </h2>
 
-          <p className="mt-6 leading-6 text-muted-foreground xl:leading-normal 2xl:text-lg">
+          <p className="mt-6 leading-6 text-muted-foreground xl:leading-normal">
             {copy}
           </p>
         </div>

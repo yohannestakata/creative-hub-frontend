@@ -27,16 +27,16 @@ const InsightsListPresentation = ({ blogs }: InsightsListPresentationProps) => {
         />
         <div className="absolute inset-0 z-10 flex flex-col justify-end bg-gradient-to-bl from-black/40 to-black/80 px-4 py-6 md:p-8">
           <div className="w-full space-y-3 md:w-10/12 lg:w-1/2">
-            <div className="w-fit rounded-md bg-background p-2 leading-none 2xl:text-lg">
+            <div className="w-fit rounded-md bg-background p-2 text-sm leading-none">
               {new Intl.DateTimeFormat("en-US", {
                 dateStyle: "medium",
                 timeStyle: "short",
               }).format(new Date(blogs[0].dateTime))}
             </div>
-            <div className="font-display text-xl font-medium leading-none tracking-tight text-background md:text-2xl 2xl:text-3xl">
+            <div className="font-display text-xl font-medium leading-none tracking-tight text-background md:text-3xl">
               {blogs[0].title}
             </div>
-            <div className="line-clamp-2 text-background opacity-60 2xl:text-lg 2xl:leading-normal">
+            <div className="line-clamp-2 text-background opacity-60">
               {blogs[0].description}
             </div>
           </div>

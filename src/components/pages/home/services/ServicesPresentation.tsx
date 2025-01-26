@@ -32,7 +32,7 @@ const ServicesPresentation = ({ services }: ServicesPresentationProps) => {
     const timeline = gsap.timeline({
       scrollTrigger: {
         trigger: containerRef.current,
-        scrub: 1,
+        scrub: true,
         start: "top top",
         end: `+=${cardsRef.current.scrollWidth - cardsRef.current.offsetWidth}`,
         pin: true,
@@ -86,10 +86,10 @@ const ServicesPresentation = ({ services }: ServicesPresentationProps) => {
                   }}
                 >
                   <div className="flex flex-col gap-3 text-background md:w-1/2">
-                    <span className="text-display text-2xl font-medium leading-none 2xl:text-3xl">
+                    <span className="text-display text-2xl font-medium leading-none ">
                       {service.title}
                     </span>
-                    <span className="opacity-60 2xl:text-lg 2xl:leading-tight">
+                    <span className="opacity-60  2xl:leading-tight">
                       {service.copy}
                     </span>
                   </div>

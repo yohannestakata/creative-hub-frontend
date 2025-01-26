@@ -80,7 +80,7 @@ const EventCalendarPresentation: React.FC<EventCalendarPresentationProps> = ({
             <form>
               <select
                 id="months"
-                className="block w-full rounded-lg bg-muted p-3 leading-none focus:border-2 focus:border-primary focus:outline-none focus:ring-primary 2xl:text-lg"
+                className="block w-full rounded-lg bg-muted p-3 leading-none focus:border-2 focus:border-primary focus:outline-none focus:ring-primary"
                 value={months[selectedMonth]}
                 onChange={(e) =>
                   setSelectedMonth(months.indexOf(e.target.value))
@@ -118,7 +118,7 @@ const EventCalendarPresentation: React.FC<EventCalendarPresentationProps> = ({
                     <li
                       key={event.id}
                       className={twMerge(
-                        "cursor-pointer space-y-2 rounded-2xl p-4 text-lg leading-none transition-colors",
+                        "cursor-pointer space-y-2 rounded-2xl p-4 leading-none transition-colors",
                         selectedEvent?.id === event.id
                           ? "bg-primary"
                           : "bg-muted text-foreground",
@@ -126,15 +126,13 @@ const EventCalendarPresentation: React.FC<EventCalendarPresentationProps> = ({
                       onClick={() => setSelectedEvent(event)}
                     >
                       <div className="font-semibold">
-                        <span className="text-lg 2xl:text-xl">
-                          {formattedDate}
-                        </span>
-                        <span>
+                        <span className="text-lg">{formattedDate}</span>
+                        <span className="text-base">
                           {" "}
                           {startTime} - {endTime}
                         </span>
                       </div>
-                      <div>{event.title}</div>
+                      <div className="text-base">{event.title}</div>
                     </li>
                   );
                 })}
@@ -160,16 +158,16 @@ const EventCalendarPresentation: React.FC<EventCalendarPresentationProps> = ({
               />
               <div className="absolute inset-0 z-10 flex flex-col justify-end bg-gradient-to-bl from-black/40 to-black/80 p-8">
                 <div className="space-y-3">
-                  <div className="w-fit rounded-md bg-background p-2 leading-none 2xl:text-lg">
+                  <div className="w-fit rounded-md bg-background p-2 text-sm font-medium leading-none">
                     {new Intl.DateTimeFormat("en-US", {
                       dateStyle: "medium",
                       timeStyle: "short",
                     }).format(new Date(selectedEvent.dateTime))}
                   </div>
-                  <div className="font-display text-xl font-medium leading-none tracking-tighter text-background lg:text-2xl 2xl:text-3xl">
+                  <div className="font-display text-xl font-medium leading-none tracking-tighter text-background md:text-3xl">
                     {selectedEvent.title}
                   </div>
-                  <div className="line-clamp-2 text-background opacity-60 2xl:text-lg 2xl:leading-normal">
+                  <div className="line-clamp-2 text-background opacity-60 2xl:leading-normal">
                     {selectedEvent.description}
                   </div>
                 </div>

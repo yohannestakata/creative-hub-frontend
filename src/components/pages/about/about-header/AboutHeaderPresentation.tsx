@@ -24,10 +24,10 @@ const AboutHeaderPresentation = ({
 
         <div className="absolute left-0 top-0 z-10 grid h-full w-full grid-cols-12 items-center gap-x-4 rounded-2xl bg-foreground/70 text-background">
           <div className="col-span-10 col-start-2 md:col-span-8 md:col-start-3">
-            <h1 className="font-display text-2xl font-medium leading-none tracking-tighter lg:text-3xl">
+            <h1 className="font-display text-2xl font-medium leading-none tracking-tighter md:text-4xl">
               {title}
             </h1>
-            <p className="mt-4 2xl:text-lg 2xl:leading-normal">{copy} </p>
+            <p className="mt-4 2xl:leading-normal">{copy} </p>
           </div>
         </div>
       </div>

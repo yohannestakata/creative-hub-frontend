@@ -52,7 +52,7 @@ const BackgroundImage = ({ ref, imgUrl }: BackgroundImageProps) => (
 
 const MainOverlay = ({ ref, title, highlightWord }: MainOverlayProps) => (
   <div
-    className="absolute flex h-full w-full flex-col items-center justify-center -space-y-4 text-center font-display text-3xl font-medium uppercase leading-none tracking-tighter opacity-100 lg:text-6xl 2xl:text-6xl"
+    className="absolute flex h-full w-full flex-col items-center justify-center -space-y-4 text-center font-display text-3xl font-medium uppercase leading-none tracking-tighter opacity-100 lg:text-6xl"
     ref={ref}
   >
     {title.split(" ").map((word, index) =>
@@ -71,7 +71,7 @@ const MainOverlay = ({ ref, title, highlightWord }: MainOverlayProps) => (
 
 const SecondaryOverlay = ({ ref, text }: SecondaryOverlayProps) => (
   <div
-    className="pointer-events-none absolute col-span-6 grid h-full w-full grid-cols-12 items-center gap-4 px-4 text-xl leading-tight tracking-tight opacity-0 md:px-8 2xl:text-2xl"
+    className="pointer-events-none absolute col-span-6 grid h-full w-full grid-cols-12 items-center gap-4 px-4 text-xl leading-tight tracking-tight opacity-0 md:px-8"
     ref={ref}
   >
     <span className="col-span-10 col-start-2 text-background md:col-span-6 md:col-start-4">

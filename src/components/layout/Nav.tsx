@@ -44,7 +44,7 @@ export default function Nav() {
       >
         <div className={`flex w-full flex-1 justify-between`}>
           <Link href="/">
-            <div className="z-50 flex items-center gap-2 md:h-14 2xl:h-20">
+            <div className="z-50 flex items-center gap-2 md:h-14">
               <Image
                 src={logo}
                 alt="Ras Tech Logo"
@@ -57,7 +57,7 @@ export default function Nav() {
         </div>
 
         <button
-          className="flex rounded-full bg-primary px-4 py-2 text-[14px] leading-none md:px-6 md:py-3 md:text-base 2xl:text-lg"
+          className="flex rounded-full bg-primary px-4 py-2 text-[14px] leading-none md:px-6 md:py-3 md:text-base"
           onClick={showDialog}
         >
           Join now

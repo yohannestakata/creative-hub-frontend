@@ -43,7 +43,7 @@ export default function NavPresentation() {
       >
         <div className="flex w-full flex-1 justify-between">
           <Link href="/">
-            <div className="z-50 flex h-14 items-center gap-2 2xl:h-20">
+            <div className="z-50 flex h-14 items-center gap-2">
               <Image
                 src={logo}
                 alt="Ras Tech Logo"

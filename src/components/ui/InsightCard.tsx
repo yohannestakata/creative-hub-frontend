@@ -35,17 +35,17 @@ const InsightCard = ({
           )}
         />
       </div>
-      <div className="mt-3 flex flex-col 2xl:text-lg 2xl:leading-normal">
-        <span className="text-sm 2xl:text-base">
+      <div className="mt-3 flex flex-col">
+        <span className="text-sm">
           {new Intl.DateTimeFormat("en-US", {
             dateStyle: "medium",
             timeStyle: "short",
           }).format(new Date(blog.dateTime))}
         </span>
-        <span className="mt-1 line-clamp-2 text-[20px] font-semibold leading-[120%] group-hover:underline group-hover:underline-offset-4 md:text-lg 2xl:text-xl">
+        <span className="mt-1 line-clamp-2 text-[20px] font-semibold leading-[120%] group-hover:underline group-hover:underline-offset-4 md:text-lg">
           {blog.title}
         </span>
-        <span className="mt-2 line-clamp-2 text-muted-foreground 2xl:text-lg 2xl:leading-normal">
+        <span className="mt-1 line-clamp-2 text-muted-foreground">
           {blog.description}
         </span>
       </div>

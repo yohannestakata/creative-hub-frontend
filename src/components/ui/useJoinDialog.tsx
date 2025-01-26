@@ -61,7 +61,7 @@ const useJoinDialog = () => {
               <X />
             </button>
           </div>
-          <h2 className="mt-6 font-display text-3xl font-medium uppercase leading-none tracking-tighter 2xl:text-4xl">
+          <h2 className="mt-6 font-display text-3xl font-medium uppercase leading-none tracking-tighter">
             Join the creative community
           </h2>
           <form className="mt-4">

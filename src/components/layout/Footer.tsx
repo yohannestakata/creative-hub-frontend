@@ -22,25 +22,25 @@ const Footer = () => {
       <footer className="">
         <div className="flex flex-col gap-12 px-4 py-16 md:flex-row md:gap-4 md:px-8">
           <div className="flex-1">
-            <span className="font-display text-xl font-medium uppercase leading-none tracking-tighter lg:text-3xl 2xl:text-4xl">
+            <span className="font-display text-xl font-medium uppercase leading-none tracking-tighter lg:text-3xl">
               Join the Creative Community
             </span>
-            <p className="mt-4 text-muted-foreground 2xl:text-lg 2xl:leading-normal">
+            <p className="2xl:-lg mt-4 text-muted-foreground">
               Unlock full access to Creative Hub Ethiopia—book spaces, schedule
               events, connect with industry experts, and stay ahead with
               exclusive trainings and opportunities.
             </p>
             <button
-              className="mt-5 rounded-full bg-primary px-6 py-3 leading-none 2xl:text-lg"
+              className="mt-5 rounded-full bg-primary px-6 py-3 leading-none"
               onClick={showDialog}
             >
               Join the community
             </button>
           </div>
-          <div className="grid flex-1 grid-cols-6 gap-4 2xl:text-lg">
+          <div className="grid flex-1 grid-cols-6 gap-4">
             <div className="col-span-4 md:col-span-3">
               <span className="font-semibold uppercase">Contact</span>
-              <ul className="mt-3 space-y-2 2xl:mt-5 2xl:space-y-4">
+              <ul className="-4 mt-3 space-y-2">
                 <li>
                   <Link
                     href="/"
@@ -72,7 +72,7 @@ const Footer = () => {
             </div>
             <div className="col-span-2">
               <span className="font-semibold uppercase">Sitemap</span>
-              <ul className="mt-3 grid grid-cols-1 gap-2 2xl:mt-5 2xl:space-y-4">
+              <ul className="-4 mt-3 grid grid-cols-1 gap-2">
                 <li>
                   <Link
                     href="/"
@@ -146,7 +146,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="border-t px-4 py-6 2xl:text-lg 2xl:leading-normal">
+        <div className="border-t px-4 py-6">
           <div className="text-left lg:text-center">
             Copyright &copy; 2025 Creative Hub Ethiopia | All rights reserved
           </div>

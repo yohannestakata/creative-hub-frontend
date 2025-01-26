@@ -39,7 +39,7 @@ const Gallery = ({ images }: GalleryProps) => {
         end: `+=${maxHeight}px`,
         pin: true,
         anticipatePin: 1,
-        scrub: 1,
+        scrub: true,
       },
     });
 

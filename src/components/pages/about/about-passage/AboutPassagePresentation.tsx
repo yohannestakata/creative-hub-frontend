@@ -13,10 +13,10 @@ const AboutPassagePresentation = () => {
         />
       </div>
       <div className="col-span-12 flex flex-col gap-4 lg:col-span-6">
-        <h2 className="font-display text-xl font-medium leading-none tracking-tighter lg:text-2xl 2xl:text-2xl">
+        <h2 className="font-display text-xl font-medium leading-none tracking-tighter lg:text-3xl">
           Celebrating Notable Guests
         </h2>
-        <p className="2xl:text-lg 2xl:leading-normal">
+        <p>
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et beatae
           nihil possimus. Harum rerum et quas, aliquid deleniti possimus
           assumenda nihil laboriosam aspernatur aperiam perferendis distinctio
@@ -25,7 +25,7 @@ const AboutPassagePresentation = () => {
           in accusantium nisi ipsa quis, doloremque nemo necessitatibus
           consequuntur rerum quae enim, neque veritatis ducimus.
         </p>
-        <p className="2xl:text-lg 2xl:leading-normal">
+        <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam
           voluptate autem nulla! Ad deserunt saepe iure possimus, libero, fuga
           repellat similique dolores consectetur tenetur doloremque cumque,

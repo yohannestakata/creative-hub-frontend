@@ -31,7 +31,7 @@ const EventsPresentation = ({ services }: EventsPresentationProps) => {
     const timeline = gsap.timeline({
       scrollTrigger: {
         trigger: containerRef.current,
-        scrub: 1,
+        scrub: true,
         start: "top top",
         end: `+=${cardsRef.current.scrollWidth - cardsRef.current.offsetWidth}`,
         pin: true,
@@ -83,16 +83,16 @@ const EventsPresentation = ({ services }: EventsPresentationProps) => {
                   }}
                 >
                   <div className="flex flex-col text-background md:w-1/2">
-                    <span className="inline-block w-fit rounded bg-background p-2 text-sm font-semibold leading-none text-foreground 2xl:text-base">
+                    <span className="inline-block w-fit rounded bg-background p-2 text-sm font-semibold leading-none text-foreground">
                       {new Intl.DateTimeFormat("en-US", {
                         dateStyle: "medium",
                         timeStyle: "short",
                       }).format(new Date(service.dateTime))}
                     </span>
-                    <span className="text-display mt-4 text-2xl font-medium leading-none 2xl:text-3xl">
+                    <span className="text-display mt-4 text-2xl font-medium leading-none">
                       {service.title}
                     </span>
-                    <span className="-mb-1 mt-3 opacity-60 2xl:text-lg 2xl:leading-normal">
+                    <span className="-mb-1 mt-3 opacity-60 2xl:leading-normal">
                       {service.copy}
                     </span>
                   </div>

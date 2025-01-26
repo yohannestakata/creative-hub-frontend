@@ -83,7 +83,7 @@ const AboutServicesPresentation = ({ services }: AboutServicesPresentation) => {
               <h2 className="font-display text-xl font-medium leading-none tracking-tight lg:text-2xl 2xl:text-2xl">
                 {service.title}
               </h2>
-              <p className="mt-4 2xl:text-lg 2xl:leading-normal">
+              <p className="mt-4  2xl:leading-normal">
                 {service.description}
               </p>
             </div>
