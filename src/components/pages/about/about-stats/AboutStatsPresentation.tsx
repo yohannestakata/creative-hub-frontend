@@ -1,5 +1,5 @@
 interface AboutStatsPresentationProps {
-  stats: { title: string; count: number }[];
+  stats: { title: string; count: string }[];
 }
 
 const AboutStatsPresentation = ({ stats }: AboutStatsPresentationProps) => {
