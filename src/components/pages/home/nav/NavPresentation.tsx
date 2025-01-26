@@ -47,8 +47,8 @@ export default function NavPresentation() {
               <Image
                 src={logo}
                 alt="Ras Tech Logo"
-                width={120}
-                height={120}
+                width={172}
+                height={172}
                 className="block h-full w-10/12 md:w-full md:object-cover"
               />
             </div>
