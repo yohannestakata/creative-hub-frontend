@@ -47,9 +47,9 @@ const SplashScreen: React.FC<SplashScreenProps> = ({ children }) => {
             {"Selam...".split("").map((char, index) => (
               <span
                 key={index}
-                className={`translate-y-full animate-[stagger_0.2s_ease-in-out_forwards]`}
+                className={`translate-y-full animate-[stagger_0.4s_ease-in-out_forwards]`}
                 style={{
-                  animationDelay: `${index * 0.05}s`,
+                  animationDelay: `${index * 0.1}s`,
                 }}
               >
                 {char}
