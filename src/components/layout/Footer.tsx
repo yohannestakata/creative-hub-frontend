@@ -12,7 +12,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 
-import { useJoinDialog } from "../ui";
+import { AnimatedButton, useJoinDialog } from "../ui";
 
 const Footer = () => {
   const { Dialog, showDialog } = useJoinDialog();
@@ -30,12 +30,10 @@ const Footer = () => {
               events, connect with industry experts, and stay ahead with
               exclusive trainings and opportunities.
             </p>
-            <button
-              className="mt-5 rounded-full bg-primary px-6 py-3 leading-none"
-              onClick={showDialog}
-            >
-              Join the community
-            </button>
+
+            <div className="mt-5">
+              <AnimatedButton onClick={showDialog} title="Join the community" />
+            </div>
           </div>
           <div className="grid flex-1 grid-cols-6 gap-4">
             <div className="col-span-4 md:col-span-3">

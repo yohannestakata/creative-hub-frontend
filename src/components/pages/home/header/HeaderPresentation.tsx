@@ -5,6 +5,10 @@ import { gsap } from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { useRef } from "react";
 import Image from "next/image";
+import Link from "next/link";
+
+import logo from "@/../public/Creative-Hub.svg";
+import { AnimatedButton, useJoinDialog } from "@/components/ui";
 
 interface MainOverlayProps {
   ref: React.RefObject<HTMLDivElement | null>;
@@ -141,6 +145,38 @@ const useHeaderAnimation = (
   });
 };
 
+const Nav = () => {
+  const toolbarRef = useRef<HTMLDivElement | null>(null);
+
+  const { Dialog, showDialog } = useJoinDialog();
+
+  return (
+    <>
+      <nav
+        ref={toolbarRef}
+        className="absolute top-0 z-50 flex h-fit w-full items-center justify-between px-4 py-6 leading-none md:px-8"
+      >
+        <div className="flex w-full flex-1 justify-between">
+          <Link href="/">
+            <div className="z-50 flex h-14 items-center gap-2">
+              <Image
+                src={logo}
+                alt="Ras Tech Logo"
+                width={172}
+                height={172}
+                className="block h-full w-10/12 md:w-full md:object-cover"
+              />
+            </div>
+          </Link>
+        </div>
+
+        <AnimatedButton title="Join now" onClick={showDialog} />
+      </nav>
+      <Dialog />
+    </>
+  );
+};
+
 const HeaderPresentation = ({
   imgUrl,
   copy,
@@ -159,6 +195,7 @@ const HeaderPresentation = ({
       className="relative h-screen w-full overflow-hidden bg-foreground"
       ref={containerRef}
     >
+      <Nav />
       <BackgroundImage ref={imageRef} imgUrl={imgUrl} />
       <MainOverlay
         ref={overlay1Ref}

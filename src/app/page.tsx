@@ -10,13 +10,11 @@ import {
   InsightsContainer,
 } from "@/components/pages/home";
 import { Footer } from "@/components/layout";
-import { NavPresentation } from "@/components/pages/home/nav";
 import { SmoothScrolling } from "@/components/ui";
 
 const Home = () => {
   return (
     <SmoothScrolling>
-      <NavPresentation />
       <HeaderContainer />
       <main>
         <AboutContainer />

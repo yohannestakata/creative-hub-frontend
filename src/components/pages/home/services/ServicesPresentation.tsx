@@ -67,7 +67,7 @@ const ServicesPresentation = ({ services }: ServicesPresentationProps) => {
       />
 
       {/* Services */}
-      <div className="mt-4">
+      <div className="pt-4">
         <div
           className="h-screen w-full overflow-hidden py-6"
           ref={containerRef}
@@ -86,10 +86,10 @@ const ServicesPresentation = ({ services }: ServicesPresentationProps) => {
                   }}
                 >
                   <div className="flex flex-col gap-3 text-background md:w-1/2">
-                    <span className="text-display text-2xl font-medium leading-none ">
+                    <span className="text-display text-2xl font-medium leading-none">
                       {service.title}
                     </span>
-                    <span className="opacity-60  2xl:leading-tight">
+                    <span className="opacity-60 2xl:leading-tight">
                       {service.copy}
                     </span>
                   </div>

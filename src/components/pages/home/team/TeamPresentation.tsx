@@ -123,7 +123,7 @@ const TeamPresentation = ({ team }: TeamPresentationProps) => {
                     className="h-full w-full object-cover"
                   />
                 </div>
-                <div className="mt-4 flex flex-col gap-2 leading-none">
+                <div className="flex flex-col gap-2 pt-4 leading-none">
                   <span className="text-lg font-semibold">{person.name}</span>
                   <span className="text-lg text-muted-foreground">
                     {person.position}

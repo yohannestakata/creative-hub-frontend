@@ -64,7 +64,7 @@ const EventsPresentation = ({ services }: EventsPresentationProps) => {
         sectionName="Upcoming Events"
         sectionTitle="Shaping the Future"
       />
-      <div className="mt-4">
+      <div className="pt-4">
         <div
           className="h-screen w-full overflow-hidden py-6"
           ref={containerRef}
