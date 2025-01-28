@@ -35,12 +35,13 @@ const TeamPresentation = ({ team }: TeamPresentationProps) => {
       ease: "none",
       scrollTrigger: {
         trigger: sectionRef.current,
-        start: "top top",
+        start: "center center",
         end: () => `+=${Math.abs(totalMovement)}`,
         pin: true,
         scrub: true,
         anticipatePin: 1,
         invalidateOnRefresh: true,
+        markers: true,
       },
     });
 

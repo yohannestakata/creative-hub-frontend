@@ -24,9 +24,6 @@ const ServicesPresentation = ({ services }: ServicesPresentationProps) => {
   useGSAP(() => {
     gsap.registerPlugin(ScrollTrigger);
 
-    const cards = gsap.utils.toArray<HTMLDivElement>(".service-card-item");
-    const totalCards = cards.length;
-
     if (!cardsRef.current) return;
 
     const timeline = gsap.timeline({
@@ -37,12 +34,7 @@ const ServicesPresentation = ({ services }: ServicesPresentationProps) => {
         end: `+=${cardsRef.current.scrollWidth - cardsRef.current.offsetWidth}`,
         pin: true,
         immediateRender: false,
-        snap: {
-          snapTo: 1 / (totalCards - 1),
-          duration: { min: 0.2, max: 0.5 },
-          delay: 0,
-          ease: "power1.inOut",
-        },
+        anticipatePin: 1,
       },
     });
 
