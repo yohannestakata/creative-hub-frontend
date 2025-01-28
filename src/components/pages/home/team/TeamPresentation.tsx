@@ -18,19 +18,8 @@ interface TeamPresentationProps {
 }
 
 const TeamPresentation = ({ team }: TeamPresentationProps) => {
-  const sectionRef = useRef<HTMLElement | null>(null);
+  const sectionRef = useRef<HTMLDivElement | null>(null);
   const cardContainerRef = useRef<HTMLUListElement | null>(null);
-
-  useEffect(() => {
-    const handleLoad = () => {
-      ScrollTrigger.refresh();
-    };
-    window.addEventListener("load", handleLoad);
-
-    return () => {
-      window.removeEventListener("load", handleLoad);
-    };
-  }, []);
 
   useGSAP(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -51,8 +40,8 @@ const TeamPresentation = ({ team }: TeamPresentationProps) => {
         pin: true,
         scrub: true,
         anticipatePin: 1,
-        invalidateOnRefresh: true,
         markers: true,
+        pinSpacing: true,
       },
     });
 
@@ -101,6 +90,17 @@ const TeamPresentation = ({ team }: TeamPresentationProps) => {
     });
   });
 
+  useEffect(() => {
+    const handleLoad = () => {
+      ScrollTrigger.refresh();
+    };
+    window.addEventListener("load", handleLoad);
+
+    return () => {
+      window.removeEventListener("load", handleLoad);
+    };
+  }, []);
+
   return (
     <section className="py-8 md:py-16">
       <div className="grid grid-cols-12 gap-4">
@@ -108,7 +108,7 @@ const TeamPresentation = ({ team }: TeamPresentationProps) => {
           The Team Behind Creative Hub
         </h2>
       </div>
-      <section
+      <div
         ref={sectionRef}
         className="flex h-screen items-center overflow-hidden"
       >
@@ -146,7 +146,7 @@ const TeamPresentation = ({ team }: TeamPresentationProps) => {
             <div className="card hidden w-[calc(100vw-4rem)] flex-shrink-0 rotate-12 scale-50 opacity-0 sm:w-[calc((100vw-4rem-32px)/3)] md:block" />
           </ul>
         </div>
-      </section>
+      </div>
     </section>
   );
 };
