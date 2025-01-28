@@ -4,7 +4,7 @@ import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import Image from "next/image";
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 
 type Team = {
   id: string;
@@ -20,6 +20,17 @@ interface TeamPresentationProps {
 const TeamPresentation = ({ team }: TeamPresentationProps) => {
   const sectionRef = useRef<HTMLElement | null>(null);
   const cardContainerRef = useRef<HTMLUListElement | null>(null);
+
+  useEffect(() => {
+    const handleLoad = () => {
+      ScrollTrigger.refresh();
+    };
+    window.addEventListener("load", handleLoad);
+
+    return () => {
+      window.removeEventListener("load", handleLoad);
+    };
+  }, []);
 
   useGSAP(() => {
     gsap.registerPlugin(ScrollTrigger);
