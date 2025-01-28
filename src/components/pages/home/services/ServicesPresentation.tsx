@@ -4,7 +4,7 @@ import { SectionTitle } from "@/components/ui/";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import { useRef } from "react";
+import { useRef, useEffect, useState } from "react";
 
 interface Services {
   id: string;
@@ -20,36 +20,71 @@ interface ServicesPresentationProps {
 const ServicesPresentation = ({ services }: ServicesPresentationProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const cardsRef = useRef<HTMLDivElement>(null);
+  const [imagesLoaded, setImagesLoaded] = useState(false);
+
+  // Handle image preloading
+  useEffect(() => {
+    const preloadImages = () => {
+      const imagePromises = services.map((service) => {
+        return new Promise((resolve) => {
+          const img = new Image();
+          img.src = service.imageUrl;
+          img.onload = resolve;
+          img.onerror = resolve; // Handle errors gracefully
+        });
+      });
+
+      Promise.all(imagePromises).then(() => {
+        setImagesLoaded(true);
+        ScrollTrigger.refresh();
+      });
+    };
+
+    preloadImages();
+  }, [services]);
 
   useGSAP(() => {
+    if (!imagesLoaded) return;
+
     gsap.registerPlugin(ScrollTrigger);
 
-    if (!cardsRef.current) return;
+    if (!cardsRef.current || !containerRef.current) return;
 
-    const timeline = gsap.timeline({
-      scrollTrigger: {
-        trigger: containerRef.current,
-        scrub: true,
-        start: "top top",
-        end: `+=${cardsRef.current.scrollWidth - cardsRef.current.offsetWidth}`,
-        pin: true,
-        immediateRender: false,
-        anticipatePin: 1,
-      },
+    // Calculate dimensions after images are loaded
+    const calculateDimensions = () => {
+      if (!cardsRef.current) return 0;
+      return -(cardsRef.current.scrollWidth - cardsRef.current.offsetWidth);
+    };
+
+    const scrollTrigger = ScrollTrigger.create({
+      trigger: containerRef.current,
+      scrub: true,
+      start: "top top",
+      end: () => `+=${Math.abs(calculateDimensions())}`,
+      pin: true,
+      anticipatePin: 1,
+      invalidateOnRefresh: true,
     });
 
-    timeline.to(cardsRef.current, {
+    const scrollTween = gsap.to(cardsRef.current, {
       ease: "none",
-      x: () => {
-        if (cardsRef.current) {
-          const totalWidth =
-            cardsRef.current.scrollWidth - cardsRef.current.offsetWidth;
-          return -totalWidth;
-        }
-        return 0;
-      },
+      x: calculateDimensions,
     });
-  });
+
+    // Handle resize events
+    const handleResize = () => {
+      ScrollTrigger.refresh(true);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    // Cleanup
+    return () => {
+      scrollTween.kill();
+      scrollTrigger.kill();
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [imagesLoaded]); // Run after images are loaded
 
   return (
     <section className="py-8 md:py-16">
@@ -58,7 +93,6 @@ const ServicesPresentation = ({ services }: ServicesPresentationProps) => {
         sectionTitle="Your Working Day at the Hub"
       />
 
-      {/* Services */}
       <div className="pt-4">
         <div
           className="h-screen w-full overflow-hidden py-6"
