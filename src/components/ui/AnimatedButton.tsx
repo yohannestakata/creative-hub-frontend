@@ -3,13 +3,15 @@
 import { useRef } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
+import { twMerge } from "tailwind-merge";
 
 interface AnimatedButtonProps {
   onClick: () => void;
   title: string;
+  variant?: string;
 }
 
-const AnimatedButton = ({ onClick, title }: AnimatedButtonProps) => {
+const AnimatedButton = ({ onClick, title, variant }: AnimatedButtonProps) => {
   const buttonRef = useRef<HTMLButtonElement>(null);
   const flairRef = useRef<HTMLDivElement>(null);
 
@@ -64,7 +66,7 @@ const AnimatedButton = ({ onClick, title }: AnimatedButtonProps) => {
         xPercent: x > 90 ? x + 20 : x < 10 ? x - 20 : x,
         yPercent: y > 90 ? y + 20 : y < 10 ? y - 20 : y,
         scale: 0,
-        duration: 0.3,
+        duration: 0.4,
         ease: "power2.out",
       });
     };
@@ -89,9 +91,12 @@ const AnimatedButton = ({ onClick, title }: AnimatedButtonProps) => {
     <button
       ref={buttonRef}
       onClick={onClick}
-      className="relative overflow-hidden rounded-full bg-primary px-4 py-2 text-base leading-none md:px-6 md:py-3 md:text-base"
+      className={twMerge(
+        "relative overflow-hidden rounded-full bg-primary px-4 py-2 text-base leading-none md:px-6 md:py-3 md:text-base",
+        variant === "secondary" && "bg-muted",
+      )}
     >
-      <div className="relative z-30">{title}</div>
+      <div className="relative z-30 text-foreground">{title}</div>
 
       <div
         ref={flairRef}
