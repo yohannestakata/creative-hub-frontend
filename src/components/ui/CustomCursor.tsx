@@ -44,10 +44,22 @@ const CustomCursor = () => {
       });
     };
 
+    const clickCursor = () => {
+      gsap.to(cursor, {
+        duration: 0.3,
+        scale: 2,
+        backgroundColor: "white",
+        border: "0.5px solid rgba(255, 255, 255, 0.1)",
+        ease: "power2.out",
+      });
+    };
+
     document.addEventListener("mousemove", followMouse);
     links.forEach((link) => {
       link.addEventListener("mouseenter", expandCursor);
       link.addEventListener("mouseleave", shrinkCursor);
+      link.addEventListener("mousedown", clickCursor);
+      link.addEventListener("mouseup", expandCursor);
     });
   });
 
