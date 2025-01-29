@@ -15,7 +15,7 @@ const CustomCursor = () => {
       yPercent: -50,
     });
 
-    const followMouse = (e) => {
+    const followMouse = (e: MouseEvent): void => {
       gsap.to(cursor, {
         duration: 0.1,
         x: e.clientX,
