@@ -40,7 +40,7 @@ const TeamPresentation = ({ team }: TeamPresentationProps) => {
         pin: true,
         scrub: true,
         anticipatePin: 1,
-        markers: true,
+        markers: false,
         pinSpacing: true,
       },
     });
