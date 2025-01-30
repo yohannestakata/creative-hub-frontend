@@ -10,9 +10,9 @@ const SmoothScrolling: React.FC<SmoothScrollingProps> = ({ children }) => {
     <ReactLenis
       root
       options={{
-        duration: 0.5,
+        duration: 1,
         smoothWheel: true,
-        wheelMultiplier: 0.45,
+        wheelMultiplier: 0.7,
       }}
     >
       {children}

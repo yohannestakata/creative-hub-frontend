@@ -9,6 +9,7 @@ import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import { useCallback } from "react";
 import Image from "next/image";
+import { LucideQuote, Quote, TextQuote } from "lucide-react";
 
 interface Testimonial {
   id: string;
@@ -61,8 +62,8 @@ const TestimonialsPresentation = ({
               className="flex h-full min-w-0 flex-[0_0_100%] translate-x-0 transform flex-col py-16 pl-4"
               key={testimonial.id}
             >
-              <p className="font-display text-xl font-medium leading-none tracking-tighter md:text-3xl">
-                {testimonial.testimonial}
+              <p className="relative font-display text-xl font-medium leading-none tracking-tighter md:text-3xl">
+                &quot;{testimonial.testimonial}&quot;
               </p>
               <div className="mt-auto flex items-end gap-4 md:w-3/4">
                 <div className="aspect-square w-28 overflow-hidden rounded-2xl">
