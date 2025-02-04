@@ -84,8 +84,8 @@ const EventsPresentation = ({ services }: EventsPresentationProps) => {
                     <span className="text-display mt-4 text-2xl font-medium leading-none md:w-1/2">
                       {service.title}
                     </span>
-                    <div className="flex items-end justify-between">
-                      <span className="-mb-1 mt-3 w-1/2 opacity-60 2xl:leading-normal">
+                    <div className="flex md:items-end justify-between flex-col md:flex-row gap-4 md:flex-0">
+                      <span className="-mb-1 mt-3 md:w-1/2 w-11/12 opacity-60 2xl:leading-normal">
                         {service.copy}
                       </span>
                       <AnimatedButton
