@@ -56,7 +56,7 @@ const BackgroundImage = ({ ref, imgUrl }: BackgroundImageProps) => (
 
 const MainOverlay = ({ ref, title, highlightWord }: MainOverlayProps) => (
   <div
-    className="absolute flex h-full w-full flex-col items-center justify-center -space-y-4 text-center font-display text-3xl font-medium uppercase leading-none tracking-tighter opacity-100 lg:text-6xl"
+    className="absolute flex h-full w-full flex-col items-center justify-center lg:-space-y-4 -space-y-2 text-center font-display text-3xl md:text-4xl font-medium uppercase leading-none tracking-tighter opacity-100 lg:text-6xl"
     ref={ref}
   >
     {title.split(" ").map((word, index) =>

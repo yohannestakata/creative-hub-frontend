@@ -104,7 +104,7 @@ const TeamPresentation = ({ team }: TeamPresentationProps) => {
   return (
     <section className="py-8 md:py-16">
       <div className="grid grid-cols-12 gap-4">
-        <h2 className="col-span-full text-balance text-center font-display text-xl font-medium uppercase leading-none tracking-tighter md:col-span-6 md:col-start-4 md:text-3xl">
+        <h2 className="col-span-full text-balance text-center font-display text-xl font-medium uppercase leading-none tracking-tighter md:col-span-8 md:col-start-3 md:text-3xl lg:col-span-6 lg:col-start-4">
           The Team Behind Creative Hub
         </h2>
       </div>
@@ -114,17 +114,17 @@ const TeamPresentation = ({ team }: TeamPresentationProps) => {
       >
         <div className="relative">
           <ul
-            className="flex gap-4 px-8"
+            className="flex gap-4 px-8 sm:px-20 md:px-8"
             ref={cardContainerRef}
             style={{
               width: "fit-content",
             }}
           >
-            <div className="card hidden w-[calc(100vw-4rem)] flex-shrink-0 rotate-12 scale-50 opacity-0 sm:w-[calc((100vw-4rem-32px)/3)] md:block" />
+            <div className="card hidden w-[calc(100vw-4rem)] flex-shrink-0 rotate-12 scale-50 opacity-0 sm:w-[calc(100vw-8rem-32px)] md:block md:w-[calc((100vw-30rem)/2)] lg:w-[calc((100vw-4rem-32px)/3)]" />
             {team.map((person) => (
               <li
                 key={person.id}
-                className="card w-[calc(100vw-4rem)] flex-shrink-0 rotate-12 scale-50 contrast-50 sm:w-[calc((100vw-4rem-32px)/3)]"
+                className="card w-[calc(100vw-4rem)] flex-shrink-0 rotate-12 scale-50 contrast-50 sm:w-[calc(100vw-8rem-32px)] md:w-[calc((100vw-4rem-16px)/2)] lg:w-[calc((100vw-4rem-32px)/3)]"
               >
                 <div className="aspect-square overflow-hidden rounded-xl">
                   <Image
@@ -143,7 +143,7 @@ const TeamPresentation = ({ team }: TeamPresentationProps) => {
                 </div>
               </li>
             ))}
-            <div className="card hidden w-[calc(100vw-4rem)] flex-shrink-0 rotate-12 scale-50 opacity-0 sm:w-[calc((100vw-4rem-32px)/3)] md:block" />
+            <div className="card hidden w-[calc(100vw-4rem)] flex-shrink-0 rotate-12 scale-50 opacity-0 sm:w-[calc(100vw-8rem-32px)] md:block md:w-[calc((100vw-30rem)/2)] lg:w-[calc((100vw-4rem-32px)/3)]" />
           </ul>
         </div>
       </div>

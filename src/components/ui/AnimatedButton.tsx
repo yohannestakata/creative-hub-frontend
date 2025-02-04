@@ -92,7 +92,7 @@ const AnimatedButton = ({ onClick, title, variant }: AnimatedButtonProps) => {
       ref={buttonRef}
       onClick={onClick}
       className={twMerge(
-        "relative overflow-hidden rounded-full bg-primary px-4 py-2 text-base leading-none md:px-6 md:py-3 md:text-base",
+        "relative overflow-hidden rounded-full bg-primary px-4 py-2 text-base leading-none md:px-6 md:py-3 md:text-base w-fit",
         variant === "secondary" && "bg-muted",
       )}
     >
