@@ -44,15 +44,10 @@ const useJoinDialog = () => {
   const Dialog = () => (
     <dialog
       ref={dialogRef}
-      className="w-10/12 rounded-2xl backdrop:bg-foreground/40 backdrop:backdrop-blur-sm"
+      className="md:w-10/12 w-11/12 rounded-2xl backdrop:bg-foreground/40 backdrop:backdrop-blur-sm"
     >
-      <div className="absolute right-0 top-0 p-6">
-        <button onClick={hideDialog}>
-          <X />
-        </button>
-      </div>
-      <div className="grid grid-cols-12 gap-6 p-6">
-        <div className="relative col-span-10 col-start-2 hidden aspect-video overflow-hidden rounded-2xl bg-muted md:block lg:col-span-6 lg:aspect-square">
+      <div className="grid grid-cols-12 gap-6 p-4">
+        <div className="relative hidden aspect-video overflow-hidden rounded-2xl bg-muted lg:block col-span-6 lg:aspect-square">
           <Image
             className="h-full w-full object-cover"
             src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2671&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -60,8 +55,13 @@ const useJoinDialog = () => {
             fill
           />
         </div>
-        <div className="col-span-10 md:col-span-10 md:col-start-2 md:pt-5 -mt-5 md:mt-0 lg:col-span-6">
-          <h2 className="mt-6 font-display text-xl md:text-2xl font-medium uppercase leading-none tracking-tighter lg:text-3xl">
+        <div className="col-span-12 col-start-0  md:col-span-12 md:col-start-0 lg:col-span-6">
+          <div className="flex flex-row-reverse">
+            <button onClick={hideDialog}>
+              <X />
+            </button>
+          </div>
+          <h2 className="mt-6 font-display  font-medium uppercase leading-none tracking-tighter text-xl md:text-3xl">
             Join the creative community
           </h2>
           <form className="mt-4 text-[14px] md:text-base">
