@@ -147,12 +147,12 @@ const AboutPresentation = ({
           </p>
         </div>
         <div
-          className="absolute left-0 top-full mt-6 w-full pl-4 md:pl-[calc((100%_-_((11_*_24px)_+_64px))_/_12_*_2_+_24px_*_2_+_32px)]"
+          className="absolute left-0 top-full mt-6 w-full px-4 md:px-[calc((100%_-_((11_*_24px)_+_64px))_/_12_*_2_+_24px_*_2_+_32px)]"
           ref={videoOuterContainerRef}
         >
           <div
             ref={videoInnerContainerRef}
-            className="relative aspect-video w-1/2 overflow-hidden rounded-2xl bg-foreground md:w-1/4"
+            className="relative aspect-video w-full overflow-hidden rounded-2xl bg-black bg-foreground md:w-1/4"
           >
             <div className="absolute inset-0">
               <Suspense
