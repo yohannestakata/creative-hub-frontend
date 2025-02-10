@@ -44,10 +44,10 @@ const useJoinDialog = () => {
   const Dialog = () => (
     <dialog
       ref={dialogRef}
-      className="md:w-10/12 w-11/12 rounded-2xl backdrop:bg-foreground/40 backdrop:backdrop-blur-sm"
+      className="w-11/12 rounded-2xl backdrop:bg-foreground/40 backdrop:backdrop-blur-sm md:w-10/12"
     >
       <div className="grid grid-cols-12 gap-6 p-4">
-        <div className="relative hidden aspect-video overflow-hidden rounded-2xl bg-muted lg:block col-span-6 lg:aspect-square">
+        <div className="relative col-span-6 hidden aspect-video overflow-hidden rounded-2xl bg-muted lg:block lg:aspect-square">
           <Image
             className="h-full w-full object-cover"
             src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2671&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -55,13 +55,13 @@ const useJoinDialog = () => {
             fill
           />
         </div>
-        <div className="col-span-12 col-start-0  md:col-span-12 md:col-start-0 lg:col-span-6">
+        <div className="col-start-0 md:col-start-0 col-span-12 md:col-span-12 lg:col-span-6">
           <div className="flex flex-row-reverse">
             <button onClick={hideDialog}>
               <X />
             </button>
           </div>
-          <h2 className="mt-6 font-display  font-medium uppercase leading-none tracking-tighter text-xl md:text-3xl">
+          <h2 className="mt-6 font-display text-2xl font-medium uppercase leading-none tracking-tighter md:text-3xl">
             Join the creative community
           </h2>
           <form className="mt-4 text-[14px] md:text-base">
@@ -95,13 +95,13 @@ const useJoinDialog = () => {
             <div className="mt-3 flex justify-end gap-2">
               <button
                 onClick={hideDialog}
-                className="rounded-full bg-muted px-4 py-2 leading-none sm:text-[14px] md:px-6 md:py-3 md:text-base"
+                className="rounded-full bg-muted px-6 py-3 leading-none md:px-6 md:py-3"
               >
                 Close
               </button>
               <button
                 type="submit"
-                className="rounded-full bg-primary px-4 py-2 leading-none sm:text-[14px] md:px-6 md:py-3 md:text-base"
+                className="rounded-full bg-primary px-6 py-3 leading-none md:px-6 md:py-3"
               >
                 Join now
               </button>

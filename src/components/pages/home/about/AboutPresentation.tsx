@@ -124,7 +124,7 @@ const AboutPresentation = ({
           className="col-span-full h-fit pt-8 md:col-span-8 md:col-start-3 md:pt-16"
           ref={textContainerRef}
         >
-          <h2 className="font-display text-2xl font-medium uppercase leading-none tracking-tighter md:text-4xl">
+          <h2 className="font-display text-3xl font-medium uppercase leading-none tracking-tighter md:text-4xl">
             {title.split(" ").map((word, wordIndex) => (
               <span key={wordIndex} className="inline-block">
                 {word.split("").map((letter, letterIndex) => (

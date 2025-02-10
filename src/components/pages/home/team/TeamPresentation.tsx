@@ -104,7 +104,7 @@ const TeamPresentation = ({ team }: TeamPresentationProps) => {
   return (
     <section className="py-8 md:py-16">
       <div className="grid grid-cols-12 gap-4">
-        <h2 className="col-span-full text-balance text-center font-display text-xl font-medium uppercase leading-none tracking-tighter md:col-span-8 md:col-start-3 md:text-3xl lg:col-span-6 lg:col-start-4">
+        <h2 className="col-span-full text-balance text-center font-display text-2xl font-medium uppercase leading-none tracking-tighter md:col-span-8 md:col-start-3 md:text-3xl lg:col-span-6 lg:col-start-4">
           The Team Behind Creative Hub
         </h2>
       </div>

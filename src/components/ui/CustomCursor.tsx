@@ -72,7 +72,7 @@ const CustomCursor = () => {
         `}
       </style>
       <div
-        className="pointer-events-none fixed left-0 top-0 z-50 h-4 w-4 rounded-full bg-white mix-blend-difference"
+        className="pointer-events-none fixed left-0 top-0 z-50 hidden h-4 w-4 rounded-full bg-white mix-blend-difference lg:block"
         ref={cursorRef}
       />
     </>

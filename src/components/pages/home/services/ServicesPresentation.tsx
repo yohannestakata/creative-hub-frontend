@@ -67,7 +67,7 @@ const ServicesPresentation = ({ services }: ServicesPresentationProps) => {
           <div className="relative h-full w-full px-4 md:px-8">
             <div
               ref={cardsRef}
-              className="absolute inset-x-8 flex h-full gap-4"
+              className="absolute inset-x-4 flex h-full gap-4 md:inset-x-8"
             >
               {services.map((service) => (
                 <div

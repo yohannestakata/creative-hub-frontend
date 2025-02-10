@@ -22,7 +22,7 @@ const Footer = () => {
       <footer className="">
         <div className="flex flex-col gap-12 px-4 py-16 md:flex-row md:gap-4 md:px-8">
           <div className="flex-1">
-            <span className="font-display text-xl font-medium uppercase leading-none tracking-tighter lg:text-3xl">
+            <span className="font-display text-2xl font-medium uppercase leading-none tracking-tighter lg:text-3xl">
               Join the Creative Community
             </span>
             <p className="2xl:-lg mt-4 text-muted-foreground">

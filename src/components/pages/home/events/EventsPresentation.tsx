@@ -64,7 +64,7 @@ const EventsPresentation = ({ services }: EventsPresentationProps) => {
           <div className="relative h-full w-full px-4 md:px-8">
             <div
               ref={cardsRef}
-              className="absolute inset-x-8 flex h-full gap-4"
+              className="absolute inset-x-4 flex h-full gap-4 md:inset-x-8"
             >
               {services.map((service) => (
                 <div
@@ -81,11 +81,11 @@ const EventsPresentation = ({ services }: EventsPresentationProps) => {
                         timeStyle: "short",
                       }).format(new Date(service.dateTime))}
                     </span>
-                    <span className="text-display mt-4 text-2xl font-medium leading-none md:w-1/2">
+                    <span className="text-display mt-4 text-xl font-medium leading-none md:w-1/2 md:text-2xl">
                       {service.title}
                     </span>
-                    <div className="flex md:items-end justify-between flex-col md:flex-row gap-4 md:flex-0">
-                      <span className="-mb-1 mt-3 md:w-1/2 w-11/12 opacity-60 2xl:leading-normal">
+                    <div className="md:flex-0 flex flex-col justify-between gap-4 md:flex-row md:items-end">
+                      <span className="-mb-1 mt-3 w-11/12 opacity-60 md:w-1/2 2xl:leading-normal">
                         {service.copy}
                       </span>
                       <AnimatedButton

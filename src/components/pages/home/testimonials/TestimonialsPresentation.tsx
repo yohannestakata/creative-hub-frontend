@@ -61,10 +61,10 @@ const TestimonialsPresentation = ({
               className="flex h-full min-w-0 flex-[0_0_100%] translate-x-0 transform flex-col py-16 pl-4"
               key={testimonial.id}
             >
-              <p className="relative font-display text-xl font-medium leading-none tracking-tighter md:text-3xl">
+              <p className="relative font-display text-xl font-medium leading-tight tracking-tighter md:text-3xl md:leading-none">
                 &quot;{testimonial.testimonial}&quot;
               </p>
-              <div className="mt-auto flex items-end gap-4 md:w-3/4">
+              <div className="mt-12 flex items-end gap-4 md:mt-24 md:w-3/4">
                 <div className="aspect-square w-28 overflow-hidden rounded-2xl">
                   <Image
                     src={testimonial.profileAvatarUrl}
@@ -75,10 +75,10 @@ const TestimonialsPresentation = ({
                   />
                 </div>
                 <div className="flex w-1/2 flex-col gap-2">
-                  <span className="text-lg font-semibold leading-none tracking-tight">
+                  <span className="font-semibold leading-none md:text-lg md:tracking-tight">
                     {testimonial.profileName}
                   </span>
-                  <span className="text-lg leading-none tracking-tight text-muted-foreground xl:leading-tight">
+                  <span className="leading-tight text-muted-foreground md:text-lg md:tracking-tight xl:leading-tight">
                     {testimonial.profilePosition}
                   </span>
                 </div>

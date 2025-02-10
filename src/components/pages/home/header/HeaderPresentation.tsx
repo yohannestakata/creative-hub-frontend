@@ -56,7 +56,7 @@ const BackgroundImage = ({ ref, imgUrl }: BackgroundImageProps) => (
 
 const MainOverlay = ({ ref, title, highlightWord }: MainOverlayProps) => (
   <div
-    className="absolute flex h-full w-full flex-col items-center justify-center lg:-space-y-4 -space-y-2 text-center font-display text-3xl md:text-4xl font-medium uppercase leading-none tracking-tighter opacity-100 lg:text-6xl"
+    className="absolute flex h-full w-full flex-col items-center justify-center -space-y-2 text-center font-display text-5xl font-medium uppercase leading-none tracking-tighter opacity-100 md:text-4xl lg:-space-y-4 lg:text-6xl"
     ref={ref}
   >
     {title.split(" ").map((word, index) =>
@@ -78,7 +78,7 @@ const SecondaryOverlay = ({ ref, text }: SecondaryOverlayProps) => (
     className="pointer-events-none absolute col-span-6 grid h-full w-full grid-cols-12 items-center gap-4 px-4 text-xl leading-tight tracking-tight opacity-0 md:px-8"
     ref={ref}
   >
-    <span className="col-span-10 col-start-2 text-background md:col-span-6 md:col-start-4">
+    <span className="col-span-full text-background md:col-span-6 md:col-start-4">
       {text}
     </span>
   </div>
@@ -138,7 +138,7 @@ const useHeaderAnimation = (
         overlay2Ref.current,
         {
           ease: "none",
-          scale: 1.1,
+          scale: 1.05,
         },
         ">",
       );
