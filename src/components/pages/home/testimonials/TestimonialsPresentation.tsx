@@ -61,11 +61,11 @@ const TestimonialsPresentation = ({
               className="flex h-full min-w-0 flex-[0_0_100%] translate-x-0 transform flex-col py-16 pl-4"
               key={testimonial.id}
             >
-              <p className="relative font-display text-xl font-medium leading-tight tracking-tighter md:text-3xl md:leading-none">
+              <p className="relative font-display text-[24px] font-medium leading-tight tracking-tighter md:text-3xl lg:text-3xl lg:leading-none">
                 &quot;{testimonial.testimonial}&quot;
               </p>
-              <div className="mt-12 items-end gap-4 md:mt-24 md:w-3/4 lg:flex hidden">
-                <div className="aspect-square w-28 overflow-hidden rounded-2xl">
+              <div className="mt-12 flex items-end gap-4 md:mt-24 md:w-3/4">
+                <div className="aspect-square w-24 overflow-hidden rounded-2xl md:w-28">
                   <Image
                     src={testimonial.profileAvatarUrl}
                     width={100}
@@ -75,10 +75,10 @@ const TestimonialsPresentation = ({
                   />
                 </div>
                 <div className="flex w-1/2 flex-col gap-2">
-                  <span className="font-semibold leading-none md:text-lg md:tracking-tight">
+                  <span className="text-[14px] font-semibold leading-none md:text-lg md:tracking-tight">
                     {testimonial.profileName}
                   </span>
-                  <span className="leading-tight text-muted-foreground md:text-lg md:tracking-tight xl:leading-tight">
+                  <span className="text-[14px] leading-tight text-muted-foreground md:text-lg md:tracking-tight xl:leading-tight">
                     {testimonial.profilePosition}
                   </span>
                 </div>
@@ -87,17 +87,17 @@ const TestimonialsPresentation = ({
           ))}
         </div>
       </div>
-      <div className="absolute bottom-0 hidden w-full justify-end px-8 py-16 md:flex">
+      <div className="absolute bottom-0 hidden w-full justify-end px-8 py-16 md:flex lg:-bottom-28 xl:bottom-0">
         <div className="grid grid-cols-2 items-center gap-3">
           <PrevButton
             onClick={() => onButtonClick(onPrevButtonClick)}
             disabled={prevBtnDisabled}
-            className="flex h-12 w-12 cursor-pointer items-center justify-center rounded-full border-2 border-foreground transition-colors duration-200 hover:bg-muted disabled:text-gray-400"
+            className="flex h-8 w-8 cursor-pointer items-center justify-center rounded-full border-2 border-foreground transition-colors duration-200 hover:bg-muted disabled:text-gray-400 md:h-12 md:w-12"
           />
           <NextButton
             onClick={() => onButtonClick(onNextButtonClick)}
             disabled={nextBtnDisabled}
-            className="flex h-12 w-12 cursor-pointer items-center justify-center rounded-full border-2 border-foreground transition-colors duration-200 hover:bg-muted disabled:text-gray-400"
+            className="flex h-8 w-8 cursor-pointer items-center justify-center rounded-full border-2 border-foreground transition-colors duration-200 hover:bg-muted disabled:text-gray-400 md:h-12 md:w-12"
           />
         </div>
       </div>
