@@ -64,7 +64,7 @@ const TestimonialsPresentation = ({
               <p className="relative font-display text-xl font-medium leading-tight tracking-tighter md:text-3xl md:leading-none">
                 &quot;{testimonial.testimonial}&quot;
               </p>
-              <div className="mt-12 flex items-end gap-4 md:mt-24 md:w-3/4">
+              <div className="mt-12 items-end gap-4 md:mt-24 md:w-3/4 lg:flex hidden">
                 <div className="aspect-square w-28 overflow-hidden rounded-2xl">
                   <Image
                     src={testimonial.profileAvatarUrl}

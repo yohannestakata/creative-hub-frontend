@@ -36,13 +36,13 @@ const Footer = () => {
             </div>
           </div>
           <div className="grid flex-1 grid-cols-6 gap-4">
-            <div className="col-span-4 md:col-span-3">
+            <div className="col-span-4 lg:col-span-3">
               <span className="font-semibold uppercase">Contact</span>
               <ul className="-4 mt-3 space-y-2">
                 <li>
                   <Link
                     href="/"
-                    className="flex items-center gap-2 hover:underline hover:underline-offset-4"
+                    className="flex items-center md:gap-2 gap-1 hover:underline hover:underline-offset-4"
                   >
                     <Smartphone />
                     <span>+251 965067723</span>
@@ -51,7 +51,7 @@ const Footer = () => {
                 <li>
                   <Link
                     href="/"
-                    className="flex items-center gap-2 hover:underline hover:underline-offset-4"
+                    className="flex items-center md:gap-2 gap-1 hover:underline hover:underline-offset-4"
                   >
                     <Mail />
                     <span>info@creativehub.et</span>
@@ -60,7 +60,7 @@ const Footer = () => {
                 <li>
                   <Link
                     href="/"
-                    className="flex items-center gap-2 hover:underline hover:underline-offset-4"
+                    className="flex items-center md:gap-2 gap-1 hover:underline hover:underline-offset-4"
                   >
                     <Send />
                     <span>Get in touch</span>
@@ -113,8 +113,8 @@ const Footer = () => {
                 </li>
               </ul>
             </div>
-            <div className="col-span-full md:col-span-1">
-              <ul className="flex gap-4 md:flex-col">
+            <div className="col-span-full lg:col-span-1">
+              <ul className="flex lg:gap-4 gap-4 md:gap-6 lg:flex-col ">
                 <li>
                   <Link href="/">
                     <FacebookIcon />
